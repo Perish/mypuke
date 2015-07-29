@@ -1,0 +1,21 @@
+<div class="panel">
+	<div class="panel-body">
+		<div class="subheader">招聘</div>
+		<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+		<% end %>
+		<h3 class="text-center"><%= @invite.name %></h3>
+		<p class="text-muted text-center"><%= fa_icon('clock-o') %> <%= @invite.created_at.strftime("%F %T") %></p>
+		<div class="row">
+			<div class="product-content">
+				<%= sanitize @invite.content %>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var hideAlert = function(){
+		$(".alert").fadeOut("slow");
+	}
+	setTimeout(hideAlert, 3000);
+</script>

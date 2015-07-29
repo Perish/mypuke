@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="<%= @company.name %>">
+  <meta name="description" content="">
+  <title><%= full_title(yield(:title)) %></title>
+    
+  <%= stylesheet_link_tag  'admin/home', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'admin/home', 'data-turbolinks-track' => true %>
+  
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <% if @company.name.present? %>
+			  <%= link_to @company.name, root_path, class: "navbar-brand" %>
+			  <% end %>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right">
+				  <% if login? %>
+				  <li><%=link_to current_user.name, admin_home_path %></li>
+				  <li><%= link_to "退出", admin_logout_path, method: :delete %></li>
+				  <% end %>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+	</header>
+	<div class="container">
+		<div class="row">
+			<% if login? %>
+			<div class="col-md-2" role="complementary">
+				<ul class="nav nav-list admin-nav-list">
+					<li class="<%= "active" if params[:controller].match(/companies/) %>">
+						<%= link_to "公司介绍", new_admin_company_path %>
+					</li>
+					<li class="<%= "active" if params[:controller].match(/sliders/) %>">
+						<%= link_to "轮播和顶部图片", admin_sliders_path %>
+					</li>
+					<li class="<%= "active" if params[:controller].match(/products/) %>">
+						<%= link_to "产品列表", admin_products_path %>
+					</li>
+					<li class="<%= "active" if params[:controller].match(/infos/) %>">
+						<%= link_to "资讯动态", admin_infos_path %>
+					</li>
+					<li class="<%= "active" if params[:controller].match(/contacts/) %>">
+						<%= link_to "联系我们", new_admin_contact_path %>
+					</li>
+					<li class="<%= "active" if params[:controller].match(/invites/) %>">
+						<%= link_to "招聘信息", admin_invites_path %>
+					</li>
+					<li class="<%= "active" if params[:controller].match(/awards/) %>">
+						<%= link_to "企业殊荣", admin_awards_path %>
+					</li>
+                  <li class="<%= "active" if params[:controller].match(/users/) %>">
+                    <%= link_to "用户管理", admin_users_path %>
+                  </li>
+				</ul>			
+			</div>
+			<div class="col-md-10" role="main" style="position: relative;">
+				<%= yield %>
+			</div>
+			<% else %>
+				<%= yield %>
+			<% end %>
+		</div>
+	</div>
+</body>
+</html>

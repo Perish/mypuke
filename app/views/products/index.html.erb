@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="shared-breadcrumb">
+		  	<ol class="breadcrumb">
+			  <span>您现在所在的位置：</span>
+			  <li><%= link_to "首页", root_path %></li>
+			  <li>产品列表</li>
+			</ol>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<%= render "product_sider" %>
+	<div class="col-md-8">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			  <h3 class="panel-title">产品列表</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<% if @products.empty? %>
+				<p class="text-center">还没有产品哟~！</p>
+		  	<% else %>
+		  	<% @products.in_groups_of(3).each do |products| %>
+				<div class="row">
+					<% products.each do |product| %>
+					<% next if product.blank? %>
+				      <div class="col-sm-6 col-md-4">
+				      	<%= link_to product, class: "product-detail" do %>
+				        <div class="thumbnail">
+				        	<%= image_tag product.pic_url || "default.svg", style: "height: 200px; width: 100%; display: block;" %>
+				          <div class="caption">
+				            <h3 class="thumbnail-label"><%= product.name %></h3>
+				            <p><%=truncate(strip_tags(product.content), length: 30, omission: '...') %></p>
+				          </div>
+				        </div>
+				    	<% end %>
+				      </div>
+					<% end %>
+				</div>
+		  	<% end %>
+		  	<%= paginate @products %>
+		  	<% end %>
+		  </div>
+	  	</div>
+	</div>
+</div>

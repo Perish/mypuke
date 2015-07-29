@@ -1,0 +1,85 @@
+zh-CN:
+  hello: 你好
+  activerecord:
+    errors:
+      models:
+        product:
+          attributes:
+            name:
+              blank: 不能为空
+            content:
+              blank: 不能为空
+        slider:
+          attributes:
+            name: 
+              blank: 不能为空
+            style:
+              inclusion: 不包含此类型
+        invite:
+          attributes:
+            name: 
+              blank: 不能为空
+            content: 
+              blank: 不能为空
+        info:
+          attributes:
+            name: 
+              blank: 不能为空
+            content:
+              blank: 不能为空
+            style:
+              blank: 不能为空
+              inclusion: 不包含此类型
+        contact:
+          attributes:
+            content: 
+              blank: 不能为空
+        company:
+          attributes:
+            name:
+              blank: 不能为空
+            summary:
+              blank: 不能为空
+            content:
+              blank: 不能为空
+            main_url:
+              blank: 不能为空
+        message:
+          attributes:
+            email:
+              blank: 不能为空
+              invalid: 格式不正确
+            name:
+              blank: 不能为空
+            tel:
+              blank: 不能为空
+              invalid: 格式不正确
+            content:
+              blank: 不能为空
+
+    attributes:
+      product:
+        name: 产品名称
+        content: 产品详情
+      slider:
+        name: 图片描述
+        style: 图片类型
+      invite:
+        name: 标题
+        content: 内容
+      info:
+        name: 资讯标题
+        content: 内容详情
+        style: 资讯类型
+      contact:
+        content: 联系方式
+      company: 
+        name: 公司名称
+        main_url: 公司网址
+        summary: 公司简介
+        content: 公司详情
+      message:
+        name: 联系人
+        email: 邮箱
+        tel: 电话
+        content: 内容

@@ -1,0 +1,67 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="shared-breadcrumb">
+		  	<ol class="breadcrumb">
+			  <span>您现在所在的位置：</span>
+			  <li><%= link_to "首页", root_path %></li>
+			  <li>联系我们</li>
+			</ol>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-6">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			  <h3 class="panel-title">联系方式</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<% if @contact.blank? %>
+				<p class="text-center">还没有联系方式哟~！</p>
+		  	<% else %>
+		  	<div class="row">
+		  		<div class="col-md-8 col-md-offset-1">
+		  			<%= sanitize @contact.content %>
+		  		</div>
+		  	</div>
+		  	<% end %>
+		  </div>
+	  	</div>
+	</div>
+	<div class="col-xs-6">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			  <h3 class="panel-title">联系我们</h3>
+		  </div>
+		  <div class="panel-body">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-1">
+				<%= form_for(@message, url: contacts_path) do |f| %>
+				    <% flash.each do |key, value|%>
+				    <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+				    <% end %>
+				<%= render partial: "shared/error_messages", locals: {obj: @message} %>
+				  <div class="form-group">
+				    <label for="name">联系人</label>
+					<%= f.text_field :name, class: "form-control", id: "name", placeholder: "联系人" %>
+				  </div>
+				  <div class="form-group">
+				    <label for="email">邮箱</label>
+					<%= f.text_field :email, class: "form-control", id: "email", placeholder: "邮箱" %>
+				  </div>
+				  <div class="form-group">
+				    <label for="tel">电话</label>
+					<%= f.text_field :tel, class: "form-control", id: "tel", placeholder: "电话" %>
+				  </div>
+				  <div class="form-group">
+				    <label for="content">内容</label>
+					<%= f.text_area :content, class: "form-control", id: "content", placeholder: "内容", rows: "3" %>
+				  </div>
+				  <%= f.button "发送", class: "btn btn-primary", data: {disable_with: "#{fa_icon("spinner spin", text: "发送...")}"}  %>
+				<% end %>
+				</div>
+			</div>
+		  </div>
+	  	</div>
+	</div>
+</div>

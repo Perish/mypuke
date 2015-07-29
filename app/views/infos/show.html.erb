@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="shared-breadcrumb">
+		  	<ol class="breadcrumb">
+			  <span>您现在所在的位置：</span>
+			  <li><%= link_to "首页", root_path %></li>
+			  <li><%= @info.name %></li>
+			</ol>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<%= render "infos_sider" %>
+
+	<div class="col-md-8">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			  <h3 class="panel-title text-center"><%= @info.name %></h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="subheader text-center">
+				<p class="text-muted text-center"><%= @info.info_type %> · <%= fa_icon('clock-o') %> <%= @info.created_at.strftime("%F %T") %></p>
+		  	</div>
+		  	<div class="row">
+		  		<div class="col-md-8 col-md-offset-1">
+		  			<%= sanitize @info.content %>
+		  		</div>
+		  	</div>
+		  </div>
+	  	</div>
+	</div>
+</div>

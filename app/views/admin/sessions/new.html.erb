@@ -1,0 +1,26 @@
+<div class="col-md-6 col-md-offset-3">
+	<div class="panel">
+		<div class="panel-body">
+			<div class="subheader">请先登陆 !</div>
+			<% flash.each do |key, value|%>
+			<div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+			<% end %>
+			<%= form_tag admin_login_path do %>
+			    <div class="form-group">
+			      <label for="name">用户名</label>
+				  <%= text_field_tag "name", params[:name], class: "form-control", id: "name", placeholder: "用户名" %>
+			    </div>
+			    <div class="form-group">
+			      <label for="password">密码</label>
+				  <%= password_field_tag "password", nil, class: "form-control", id: "password", placeholder: "密码" %>
+			    </div>
+				<%= button_tag "登陆", class: "btn btn-success btn-lg btn-block", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> 登陆..." } %>
+			<% end %>
+	</div>
+</div>
+<script type="text/javascript">
+	var hideAlert = function(){
+		$(".alert").fadeOut("slow");
+	}
+	setTimeout(hideAlert, 3000);
+</script>

@@ -1,0 +1,36 @@
+<div class="panel">
+  <div class="panel-body">
+  	<div class="subheader">
+  		招聘信息列表 
+  		<%= link_to new_admin_invite_path, class: "pull-right" do %>
+			<%= fa_icon("plus") %> 新增招聘信息
+  		<% end %>
+  	</div>
+    <% if @invites.blank? %>
+		<div class="alert alert-success" role="alert">还没有招聘信息，快去<%= link_to "新增", new_admin_invite_path, class: "btn btn-primary" %>吧！</div>
+    <% else %>
+		<div class="row header">
+			<div class="col-xs-6 col-sm-3 text-center">标题</div>
+			<div class="col-xs-6 col-sm-3 text-center">详情</div>
+			<div class="col-xs-6 col-sm-3 text-center">操作</div>
+		</div>
+
+		<% @invites.each do |invite| %>
+		<div class="row row-list <%= dom_id(invite) %>">
+			<div class="col-xs-6 col-sm-3 text-center">
+				<%= invite.name %>
+			</div>
+			<div class="col-xs-6 col-sm-3 text-center">
+				<%= truncate(strip_tags(invite.content), length: 40, omission: '...' ) %>
+			</div>
+			<div class="col-xs-6 col-sm-3 text-center">
+				<%= link_to "编辑", edit_admin_invite_path(invite), class: "btn btn-primary" %>
+		          	<%= link_to "查看", admin_invite_path(invite), class: "btn btn-primary" %>
+		          	<%= link_to "删除", admin_invite_path(invite), class: "btn btn-danger", data: { confirm: "确定删除吗？", disable_with: "<i class='fa fa-spinner fa-spin'></i> 删除..." }, method: :delete, remote: true %>
+		    </div>
+		</div>
+		<% end %>
+		    <%= paginate @invites %>
+    <% end %>
+  </div>
+</div>

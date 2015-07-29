@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="shared-breadcrumb">
+		  	<ol class="breadcrumb">
+			  <span>您现在所在的位置：</span>
+			  <li><%= link_to "首页", root_path %></li>
+			  <li><%= link_to "产品列表", products_path %></li>
+			  <li><%= @product.name %></li>
+			</ol>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<%= render "product_sider" %>
+	<div class="col-md-8">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			  <h3 class="panel-title"><%= @product.name %></h3>
+		  </div>
+		  <div class="panel-body">
+			<p class="text-center">
+				<%= image_tag @product.pic_url ||  "default.jpg", size: "300x180" %>
+			</p>
+			<hr>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 product-content">
+					<%= sanitize @product.content %>
+				</div>
+			</div>
+		  </div>
+	  	</div>
+	</div>
+</div>

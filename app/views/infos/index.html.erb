@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="shared-breadcrumb">
+		  	<ol class="breadcrumb">
+			  <span>您现在所在的位置：</span>
+			  <li><%= link_to "首页", root_path %></li>
+			  <li><%= params[:flag].to_i!=2 ? "公司动态" : "行业动态" %></li>
+			</ol>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<%= render "infos_sider" %>
+	<div class="col-md-8">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			  <h3 class="panel-title"><%= params[:flag].to_i!=2 ? "公司动态" : "行业动态" %></h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="row">
+				<div class="col-md-8 col-md-offset-1">
+				  <ul class="list-group">
+				  <% @infos.each do |info| %>
+  					<li class="list-group-item">
+  						<%= link_to info.name, info, class: "text-muted" %>
+  						<span class="pull-right text-muted"><%= info.created_at.strftime("%F") %></span>
+  					</li>
+				  <% end %>
+				</ul>
+
+  			  <% if @infos.blank? %>
+  			  <p class="text-center">还没有动态哟~！</p>
+  			  <% else %>
+				<%= paginate @infos %>
+  			  <% end %>
+
+				</div>		  		
+		  	</div>
+		  </div>
+	  	</div>
+	</div>
+</div>

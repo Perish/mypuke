@@ -1,0 +1,21 @@
+<div class="panel">
+	<div class="panel-body">
+		<div class="subheader">资讯详情</div>
+		<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+		<% end %>
+		<h3 class="text-center"><%= @info.name %></h3>
+		<p class="text-muted text-center"><%= @info.info_type %> · <%= fa_icon('clock-o') %> <%= @info.created_at.strftime("%F %T") %></p>
+		<div class="row">
+			<div class="product-content">
+				<%= sanitize @info.content %>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var hideAlert = function(){
+		$(".alert").fadeOut("slow");
+	}
+	setTimeout(hideAlert, 3000);
+</script>

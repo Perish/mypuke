@@ -1,0 +1,84 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	background-color: #0158A4;
+	.content {
+		padding-bottom: 10px;
+	}
+	.footer {
+		margin-top: 10px;
+		margin-bottom: 0px;
+	}
+}
+.container {
+	background-color: white;
+	.header-top {
+		padding: 8px;
+		color: gray;
+	}
+}
+.header-img {
+	border-top: 1px solid #eee;
+}
+.navbar-default {
+	border: 0;
+	margin-bottom: 1px;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: #ea80fc;
+  color: white;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: white;
+  background-color: #ea80fc;
+}
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+	margin-right: -60px;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-left: -60px;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  	margin: 0 auto;
+}
+.panel {
+	margin-bottom: 2px;
+}
+.more {
+	color: white;
+}
+.thumbnail {
+	margin-bottom: 0px;
+}
+
+.list-group-item { 
+	padding: 5px 15px;
+	margin-bottom: 0px;
+	border: 0px;
+	border-bottom: 1px dashed #eee;
+}
+.list-group-item:last-child {
+	border-bottom: 0px;
+}
+.list-group {
+	margin-bottom: -5px;
+}
+.shared-breadcrumb {
+	padding-top: 20px;
+}
+.product-detail {
+	&:hover {
+		text-decoration: none;
+		.caption > .thumbnail-label {
+			color: #0158A4;
+		}
+	}
+}
+
+.field_with_errors {
+	border: 2px solid red;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}

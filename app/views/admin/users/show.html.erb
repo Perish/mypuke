@@ -1,0 +1,17 @@
+<div class="panel">
+  <div class="panel-body">
+    <div class="subheader">用户</div>
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+    <h3 class="text-center"><%= @user.name %></h3>
+    <p class="text-muted text-center"><%= fa_icon('clock-o') %> <%= @user.created_at.strftime("%F %T") %></p>
+
+  </div>
+</div>
+<script type="text/javascript">
+    var hideAlert = function(){
+        $(".alert").fadeOut("slow");
+    }
+    setTimeout(hideAlert, 3000);
+</script>

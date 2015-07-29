@@ -1,0 +1,16 @@
+<%= form_for([:admin, @contact]) do |f| %>
+    <% flash.each do |key, value|%>
+    <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+  <%= render partial: "shared/error_messages", locals: {obj: @contact} %>
+    <div class="form-group">
+      <label for="profile">填写联系方式</label>
+    <%= f.text_area :content, class: "form-control", placeholder: "联系方式", id: "editor" %>
+    </div>
+  <%= f.button "提交", class: "btn btn-success", data: { disable_with: "#{fa_icon("spinner spin", text: "提交...")}" } %>
+<% end %>
+  <script>
+  var editor = new Simditor({
+    textarea: $('#editor')
+  });
+  </script>

@@ -1,0 +1,26 @@
+<div class="alert alert-success" role="alert">欢迎来到后台管理页面，您可以点击侧边栏链接编辑网站信息！</div>
+<div class="panel">
+  <div class="panel-body">
+  	<div class="subheader">
+  		最近收到的留言
+  	</div>
+    <% if @messages.blank? %>
+		<div class="alert alert-warning" role="alert">还没有留言！</div>
+    <% else %>
+    	<% @messages.each do |msg| %>
+			<div class="media">
+		      <div class="media-body">
+		      <h4 class="media-heading">联系人: <%= msg.name %><small class="pull-right"><%= fa_icon('clock-o') %> <%= msg.created_at.strftime("%F %T") %></small></h4>
+		      <p>
+		      	邮箱: <strong><%=link_to msg.email, "mailto:#{msg.email}" %></strong> 
+		      	电话: <strong><%= msg.tel %> </strong>
+		      </p>
+		      <p class="text-muted">留言: <%= msg.content %></p>
+		      </div>
+		    </div>
+		    <hr>
+    	<% end %>
+		    <%= paginate @messages %>
+    <% end %>
+  </div>
+</div>

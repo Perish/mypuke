@@ -1,0 +1,37 @@
+<div class="panel">
+  <div class="panel-body">
+  	<div class="subheader">
+  		资讯列表 
+  		<%= link_to new_admin_info_path, class: "pull-right" do %>
+			<%= fa_icon("plus") %> 添加资讯
+  		<% end %>
+  	</div>
+    <% if @infos.blank? %>
+		<div class="alert alert-success" role="alert">还没有资讯，快去<%= link_to "创建", new_admin_info_path, class: "btn btn-primary" %>吧！</div>
+    <% else %>
+		<div class="row">
+			<div class="col-xs-6 col-sm-3 text-center">资讯标题</div>
+			<div class="col-xs-6 col-sm-3 text-center">资讯类型</div>
+			<div class="col-xs-6 col-sm-3 text-center">资讯内容</div>
+			<div class="col-xs-6 col-sm-3 text-center">操作</div>
+		</div>
+			<table class="table">
+		      <tbody>
+		<% @infos.each do |info| %>
+		        <tr class="row <%= dom_id(info) %>">
+		          <th class="col-xs-6 col-sm-3 text-center"><%= info.name %></th>
+		          <td class="col-xs-6 col-sm-3 text-center"><%= info.info_type %></td>
+		          <td class="col-xs-6 col-sm-3 text-center"><%= truncate(strip_tags(info.content), length: 40, omission: '...' ) %></td>
+		          <td class="col-xs-6 col-sm-3 text-center">
+		          	<%= link_to "编辑", edit_admin_info_path(info), class: "btn btn-primary" %>
+		          	<%= link_to "查看", admin_info_path(info), class: "btn btn-primary" %>
+		          	<%= link_to "删除", admin_info_path(info), class: "btn btn-danger", data: { confirm: "确定删除吗？", disable_with: "<i class='fa fa-spinner fa-spin'></i> 删除..." }, method: :delete, remote: true %>
+		          </td>
+		        </tr>
+		<% end %>
+		      </tbody>
+		    </table>
+		    <%= paginate @infos %>
+    <% end %>
+  </div>
+</div>

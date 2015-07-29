@@ -1,0 +1,17 @@
+	<div class="col-md-4">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			  <h3 class="panel-title"><%= fa_icon("mobile-phone") %>&nbsp;联系我们
+				<%= link_to contacts_path, class: "pull-right" do %>
+			  		<small class="more">更多<%= fa_icon("signal") %></small>
+			  	<% end %></h3>
+		  </div>
+		  <div class="panel-body">
+		  	<% if @company.contact.blank? %>
+				<p class="text-center">还没有联系方式哟~！</p>
+		  	<% else %>
+				<%= sanitize @company.contact.content %>
+		  	<% end %>
+		  </div>
+		</div>
+	</div>

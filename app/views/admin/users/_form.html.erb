@@ -1,0 +1,17 @@
+<%= form_for([:admin, @user]) do |f| %>
+    <%= render partial: "shared/error_messages", locals: {obj: @user} %>
+    <div class="form-group">
+      <label for="name">用户名</label>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label for="style">密码</label>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label for="content">确认密码</label>
+      <%= f.password_field :password_confirmation, class: "form-control"%>
+    </div>
+    <%= f.button "提交", class: "btn btn-success", data: { disable_with: "#{fa_icon("spinner spin", text: "提交...")}" } %>
+    <%= link_to "取消", admin_users_path, class: "btn btn-primary" %>
+<% end %>

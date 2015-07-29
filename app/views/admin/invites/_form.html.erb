@@ -1,0 +1,18 @@
+<%= form_for([:admin, @invite]) do |f| %>
+  <%= render partial: "shared/error_messages", locals: {obj: @invite} %>
+    <div class="form-group">
+      <label for="name">标题</label>
+      <%= f.text_field :name, class: "form-control", placeholder: "标题" %>
+    </div>
+    <div class="form-group">
+      <label for="profile">内容</label>
+    <%= f.text_area :content, class: "form-control", placeholder: "内容", id: "editor" %>
+    </div>
+  <%= f.button "提交", class: "btn btn-success", data: { disable_with: "#{fa_icon("spinner spin", text: "提交...")}" } %>
+  <%= link_to "取消", admin_invites_path, class: "btn btn-primary" %>
+<% end %>
+  <script>
+  var editor = new Simditor({
+    textarea: $('#editor')
+  });
+  </script>

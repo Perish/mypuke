@@ -1,0 +1,35 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+$navbar-default-bg: #1976d2;
+$navbar-default-link-color: white;
+$navbar-default-link-hover-color: white;
+$navbar-default-link-hover-bg: #ea80fc;
+$navbar-default-link-disabled-color: white;
+$navbar-default-link-disabled-bg: #ea80fc;
+$dropdown-bg: #1976d2;
+$dropdown-link-hover-bg: #ea80fc;
+$dropdown-link-active-bg: #ea80fc;
+$dropdown-link-color: white;
+$dropdown-link-hover-color: white;
+$carousel-indicator-active-bg: #c5cae9;
+$carousel-indicator-border-color: #e8eaf6;
+$carousel-caption-color: #455a64;
+$panel-primary-border: #eeeeee;
+$panel-primary-heading-bg: #1976d2;
+$panel-body-padding: 10px;
+@import "bootstrap";
+@import "font-awesome";
+@import "welcome";

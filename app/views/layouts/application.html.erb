@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="<%= @company.name %>">
+  <meta name="description" content="">
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <%= javascript_include_tag 'application' %>
+<!-- <script type='text/javascript' src='http://message.ckefu.com/js/73b6761582324dbdbe6eea3ed45bb339/2323.js' charset='UTF-8' data-turbolinks-track="false"></script> -->
+</head>
+<body>
+<div class="container">
+	<div class="header-top">
+		今天是<%= time_day %>，欢迎光临本站 <span class="text-danger"><%= @company.name %></span>
+    <%= link_to "网址： #{@company.main_url}", "http://#{@company.main_url}", target: "_blank" %>
+		<div class="pull-right small">
+			<%= link_to "后台管理", admin_home_path, target: "_blank" %>
+		</div>
+	</div>    
+  <div class="row text-center header-img">
+    <%= image_tag @company.com_top.present? ? @company.com_top.pic_url : "header.png", width: "100%"%>
+  </div>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="<%= 'active' if controller_name=='welcome' %>">
+              <%= link_to "首页", root_path %>
+            </li>
+            <li class="<%= 'active' if controller_name=='companies' %>">
+              <%= link_to "公司介绍", intro_path %>
+            </li>
+            <li class="<%= 'active' if controller_name=='products' %>">
+              <%= link_to "产品展示", products_path %>
+            </li>
+            <li class="<%= 'active' if controller_name=='infos' && params[:flag]=="1" %>">
+              <%= link_to "公司动态", infos_path(flag: 1) %>
+            </li>
+            <li class="<%= 'active' if controller_name=='infos' && params[:flag]=="2"  %>">
+              <%= link_to "行业动态", infos_path(flag: 2) %>
+            </li>
+            <li class="<%= 'active' if controller_name=='contacts'  %>">
+              <%= link_to "联系我们", contacts_path %>
+            </li>
+            <li class="<%= 'active' if controller_name=='invites'  %>">
+              <%= link_to "招聘信息", invites_path %>
+            </li>
+            <li class="<%= 'active' if controller_name=='awards'  %>">
+              <%= link_to "企业殊荣", awards_path %>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="javascript:void(0);" onclick="SetHome(this, location.href);">设为首页</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);" onclick="AddFavorite('<%= @company.name %>', location.href)">收藏本站</a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </nav>
+</div>
+<div class="container content">
+	<%= yield %>
+</div>
+<footer class="footer">
+    <div class="container">
+		<div class="row" style="height: 40px; padding-top: 10px;">
+		    <div class="col-md-4"><div class="text-right"><span class="text-muted">版权所有：朴客有限公司</span></div></div>
+		    <div class="col-md-4"><div class="text-center"><span class="text-muted">技术支持：<a href="#" class="text-muted">zero-to-one</a></span></div></div>
+		    <div class="col-md-4"><div class="text-left"><span class="text-muted">备案号：<a href="http://www.miibeian.gov.cn/" class="text-muted">鲁ICP备09027874号</a></span></div></div>
+  	  	</div>
+	</div>
+  </footer>
+  
+  <script type="text/javascript">
+function SetHome(obj,url){
+    try{
+        obj.style.behavior='url(#default#homepage)';
+        obj.setHomePage(url);
+    }catch(e){
+        if(window.netscape){
+            try{
+                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+            }catch(e){
+                alert("抱歉，此操作被浏览器拒绝！\n\n请在浏览器地址栏输入“about:config”并回车然后将[signed.applets.codebase_principal_support]设置为'true'");
+            }
+        }else{
+            alert("抱歉，您所使用的浏览器无法完成此操作。\n\n您需要手动将【"+url+"】设置为首页。");
+        }
+    }
+}
+
+//收藏本站
+function AddFavorite(title, url) {
+    try {
+        window.external.addFavorite(url, title);
+    }
+    catch (e) {
+        try {
+            window.sidebar.addPanel(title, url, "");
+        }
+        catch (e) {
+            alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加");
+        }
+    }
+}
+</script>
+
+<%= javascript_include_tag "http://message.ckefu.com/js/73b6761582324dbdbe6eea3ed45bb339/2323.js",  :charset=>"utf-8" %>
+
+</body>
+</html>

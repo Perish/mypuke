@@ -1,0 +1,19 @@
+<div class="panel">
+	<div class="panel-body">
+		<div class="subheader">荣誉</div>
+		<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+		<% end %>
+		<h3 class="text-center"><%= @award.name %></h3>
+		<p class="text-muted text-center"><%= fa_icon('clock-o') %> <%= @award.created_at.strftime("%F %T") %></p>
+		<p class="text-center">
+			<%= image_tag @award.pic_url ||  "default.jpg", size: "300x180" %>
+		</p>
+	</div>
+</div>
+<script type="text/javascript">
+	var hideAlert = function(){
+		$(".alert").fadeOut("slow");
+	}
+	setTimeout(hideAlert, 3000);
+</script>

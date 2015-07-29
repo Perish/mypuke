@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="shared-breadcrumb">
+		  	<ol class="breadcrumb">
+			  <span>您现在所在的位置：</span>
+			  <li><%= link_to "首页", root_path %></li>
+			  <li>公司介绍</li>
+			</ol>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<%= render "products/product_sider" %>
+	<div class="col-md-8">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+			  <h3 class="panel-title">公司介绍</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="row">
+		  		<div class="col-md-6">
+			  		<div class="media">
+				      <div class="media-left">
+				        <a href="#" class="thumbnail">
+				        	<%= image_tag @company.pic_url || "default.jpg" %>
+				        </a>
+				      </div>
+	    			</div>
+		  		</div>
+		  		<div class="col-md-6">
+		  			<div class="media">
+		  				<div class="media-body">
+					        <h4 class="media-heading"><%= @company.name %></h4>
+					        <%= sanitize @company.content %>
+					      </div>
+		  			</div>
+		  		</div>
+		  	</div>
+		  </div>
+	  	</div>
+	</div>
+</div>
