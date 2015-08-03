@@ -35,8 +35,8 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="#">首页</a></li>
-                <li><a href="#">在线商城</a></li>
+                <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path %></li>
+                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "产品列表", products_path %></li>
                 <li><a href="#">私人定制</a></li>
                 <li><a href="#">关于我们</a></li>
             </ul>
