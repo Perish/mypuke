@@ -1,46 +1,214 @@
-<div class="row">
-	<div class="col-md-12">
-		<div class="shared-breadcrumb">
-		  	<ol class="breadcrumb">
-			  <span>您现在所在的位置：</span>
-			  <li><%= link_to "首页", root_path %></li>
-			  <li>产品列表</li>
-			</ol>
-		</div>
-	</div>
-</div>
-<div class="row">
-	<%= render "product_sider" %>
-	<div class="col-md-8">
-		<div class="panel panel-primary">
-		  <div class="panel-heading">
-			  <h3 class="panel-title">产品列表</h3>
-		  </div>
-		  <div class="panel-body">
-		  	<% if @products.empty? %>
-				<p class="text-center">还没有产品哟~！</p>
-		  	<% else %>
-		  	<% @products.in_groups_of(3).each do |products| %>
-				<div class="row">
-					<% products.each do |product| %>
-					<% next if product.blank? %>
-				      <div class="col-sm-6 col-md-4">
-				      	<%= link_to product, class: "product-detail" do %>
-				        <div class="thumbnail">
-				        	<%= image_tag product.pic_url || "default.svg", style: "height: 200px; width: 100%; display: block;" %>
-				          <div class="caption">
-				            <h3 class="thumbnail-label"><%= product.name %></h3>
-				            <p><%=truncate(strip_tags(product.content), length: 30, omission: '...') %></p>
-				          </div>
-				        </div>
-				    	<% end %>
-				      </div>
-					<% end %>
-				</div>
-		  	<% end %>
-		  	<%= paginate @products %>
-		  	<% end %>
-		  </div>
-	  	</div>
-	</div>
-</div>
+    <div class="contain-wrap">
+        <div class="container">
+            <style type="text/css">
+@media (min-width: 768px) {
+                                                    .goods-size-378-378 {height: 237px;width:237px;}
+                                    .goods-size-378-756 {height: 237px;width:475px;}
+                                    .goods-size-378-1134 {height: 237px;width:714px;}
+                                                        .goods-size-756-378 {height: 475px;width:237px;}
+                                    .goods-size-756-756 {height: 475px;width:475px;}
+                                    .goods-size-756-1134 {height: 475px;width:714px;}
+                                                        .goods-size-1134-378 {height: 714px;width:237px;}
+                                    .goods-size-1134-756 {height: 714px;width:475px;}
+                                    .goods-size-1134-1134 {height: 714px;width:714px;}
+    }
+@media (min-width: 992px) {
+                                                    .goods-size-378-378 {height: 310px;width:310px;}
+                                    .goods-size-378-756 {height: 310px;width:621px;}
+                                    .goods-size-378-1134 {height: 310px;width:933px;}
+                                                        .goods-size-756-378 {height: 621px;width:310px;}
+                                    .goods-size-756-756 {height: 621px;width:621px;}
+                                    .goods-size-756-1134 {height: 621px;width:933px;}
+                                                        .goods-size-1134-378 {height: 933px;width:310px;}
+                                    .goods-size-1134-756 {height: 933px;width:621px;}
+                                    .goods-size-1134-1134 {height: 933px;width:933px;}
+    }
+@media (min-width: 1200px) {
+                                                    .goods-size-378-378 {height: 377px;width:377px;}
+                                    .goods-size-378-756 {height: 377px;width:755px;}
+                                    .goods-size-378-1134 {height: 377px;width:1134px;}
+                                                        .goods-size-756-378 {height: 755px;width:377px;}
+                                    .goods-size-756-756 {height: 755px;width:755px;}
+                                    .goods-size-756-1134 {height: 755px;width:1134px;}
+                                                        .goods-size-1134-378 {height: 1134px;width:377px;}
+                                    .goods-size-1134-756 {height: 1134px;width:755px;}
+                                    .goods-size-1134-1134 {height: 1134px;width:1134px;}
+    }
+</style>
+<ul id="myGoods" class="goods-list list-unstyled" style="position: relative; width: 1135px; height: 1892px;">
+                            <li class="goods-item goods-size-378-756" style="position: absolute; left: 0px; top: 0px;">
+                    <a href="http://www.yitongbaijiu.com/goods.php?id=10">
+            <div class="goods-desc text-right">
+                <h5><strong style="line-height:1.8">燃点白酒汾酒版500ml 42度清香型</strong></h5>
+                <p class="text-danger">
+                    ￥79.00                </p>
+            </div>
+             
+            <!--div class="promotion">
+                 
+                     <i class="label zk"> 折</i> 
+                     
+                 
+            </div-->
+           
+            
+            <img src="/assets/default.png" class="goods-size-378-756">
+                    </a>
+    </li>
+                                    <li class="goods-item goods-size-378-378" style="position: absolute; left: 756px; top: 0px;">
+                    <a href="http://www.yitongbaijiu.com/goods.php?id=11">
+            <div class="goods-desc text-right">
+                <h5><strong style="line-height:1.8">燃点白酒汾酒版125ml 42度清香型</strong></h5>
+                <p class="text-danger">
+                    ￥29.00                </p>
+            </div>
+             
+            
+            <img src="./product_files/11_thumb_G_1438211353759.jpg" class="goods-size-378-378">
+                    </a>
+    </li>
+                                    <li class="goods-item goods-size-756-378" style="position: absolute; left: 0px; top: 378px;">
+                    <a href="http://www.yitongbaijiu.com/goods.php?id=4">
+            <div class="goods-desc text-right">
+                <h5><strong style="line-height:1.8"><font color="#000000">燃点白酒1660ml 52度浓香型送皮套酒杯</font></strong></h5>
+                <p class="text-danger">
+                    ￥199.00                </p>
+            </div>
+             
+            <!--div class="promotion">
+                 
+                     <i class="label zk"> 折</i> 
+                     
+                 
+            </div-->
+           
+            
+            <img src="./product_files/4_thumb_G_1436226076530.jpg" class="goods-size-756-378">
+                    </a>
+    </li>
+                                    <li class="goods-item goods-size-378-756" style="position: absolute; left: 378px; top: 378px;">
+                    <a href="http://www.yitongbaijiu.com/goods.php?id=7">
+            <div class="goods-desc text-right">
+                <h5><strong style="line-height:1.8"><font color="#000000">液氧罐头&amp;燃点合作款——金属²T恤<br><small>T恤+燃点白酒125ml+SPTE铁桶包装</small></font></strong></h5>
+                <p class="text-danger">
+                    ￥149.00                </p>
+            </div>
+             
+            
+            <img src="./product_files/7_thumb_G_1436226001854.jpg" class="goods-size-378-756">
+                    </a>
+    </li>
+                                    <li class="goods-item goods-size-378-378" style="position: absolute; left: 378px; top: 756px;">
+                    <a href="http://www.yitongbaijiu.com/goods.php?id=6">
+            <div class="goods-desc text-right">
+                <h5><strong style="line-height:1.8">燃点白酒258ml 52度浓香型</strong></h5>
+                <p class="text-danger">
+                    ￥49.00                </p>
+            </div>
+             
+            <!--div class="promotion">
+                 
+                     <i class="label zk"> 折</i> 
+                     
+                 
+            </div-->
+           
+            
+            <img src="/assets/default.png" class="goods-size-378-378">
+                    </a>
+    </li>
+                                    <li class="goods-item goods-size-756-378" style="position: absolute; left: 756px; top: 756px;">
+                    <a href="http://www.yitongbaijiu.com/goods.php?id=1">
+            <div class="goods-desc text-right">
+                <h5><strong style="line-height:1.8"><font color="#000000">燃点白酒500ml 52度浓香型</font></strong></h5>
+                <p class="text-danger">
+                    ￥79.00                </p>
+            </div>
+             
+            <!--div class="promotion">
+                 
+                     <i class="label zk"> 折</i> 
+                     
+                 
+            </div-->
+           
+            
+            <img src="/assets/default.png" class="goods-size-756-378">
+                    </a>
+    </li>
+                                    <li class="goods-item goods-size-378-378" style="position: absolute; left: 0px; top: 1134px;">
+                    <a href="http://www.yitongbaijiu.com/goods.php?id=3">
+            <div class="goods-desc text-right">
+                <h5><strong style="line-height:1.8">燃点不锈钢酒杯30ml×2</strong></h5>
+                <p class="text-danger">
+                    ￥9.90                </p>
+            </div>
+             
+            
+            <img src="./product_files/3_thumb_G_1436221088756.jpg" class="goods-size-378-378">
+                    </a>
+    </li>
+                                    <li class="goods-item goods-size-378-378" style="position: absolute; left: 378px; top: 1134px;">
+                    <a href="http://www.yitongbaijiu.com/goods.php?id=8">
+            <div class="goods-desc text-right">
+                <h5><strong style="line-height:1.8"><font color="#000000">燃点挑T</font></strong></h5>
+                <p class="text-danger">
+                    ￥49.00                </p>
+            </div>
+             
+            
+            <img src="./product_files/8_thumb_G_1436221770925.jpg" class="goods-size-378-378">
+                    </a>
+    </li>
+                                    <li class="goods-item goods-size-378-756" style="position: absolute; left: 0px; top: 1512px;">
+                    <a href="http://www.yitongbaijiu.com/goods.php?id=2">
+            <div class="goods-desc text-right">
+                <h5><strong style="line-height:1.8"><font color="#000000">燃点白酒125ml 52度浓香型</font></strong></h5>
+                <p class="text-danger">
+                    ￥29.00                </p>
+            </div>
+             
+            <!--div class="promotion">
+                 
+                     <i class="label zk"> 折</i> 
+                     
+                 
+            </div-->
+           
+            
+            <img src="./product_files/2_thumb_G_1436226183112.jpg" class="goods-size-378-756">
+                    </a>
+    </li>
+                                    <li class="goods-item goods-size-378-378" style="position: absolute; left: 756px; top: 1512px;">
+                    <a href="http://www.yitongbaijiu.com/goods.php?id=5">
+            <div class="goods-desc text-right">
+                <h5><strong style="line-height:1.8">燃点燃料 酒伴侣花生150g</strong></h5>
+                <p class="text-danger">
+                    ￥11.90                </p>
+            </div>
+             
+            
+            <img src="./product_files/5_thumb_G_1436221032642.jpg" class="goods-size-378-378">
+                    </a>
+    </li>
+            </ul>
+        </div>
+    </div>
+<script type="text/javascript">
+    $(function() {
+            var w = $(".container").width();
+            var columnWidth = 377;
+            if (970 < w) {
+            } else if (750 < w && w <= 970) {
+                columnWidth = 310;
+            } else if (w <= 750) {
+                columnWidth = 237;
+            }
+            $(".goods-list").masonry({
+                itemSelector: ".goods-item", 
+                columnWidth: columnWidth, 
+                gutter: 1, 
+                isFitWidth: true, 
+            });
+    });
+</script>

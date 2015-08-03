@@ -1,3 +1,50 @@
+<style type="text/css">
+body {
+    background-color: #ffffff;
+}
+.notify-wrap div {
+    margin: 0;
+}
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.head-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+/* CUSTOMIZE THE CAROUSEL
+ * -------------------------------------------------- */
+/* Main Carousel base class */
+.carousel {
+    margin-bottom: 20px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-inner .carousel-caption {
+    z-index: 1;
+}
+/* Declare heights because of positioning of img element */
+.carousel-inner .item {
+    background-color:#555;
+}
+.carousel-inner .item img {
+}
+/* RESPONSIVE CSS
+ * -------------------------------------------------- */
+@media (min-width: 768px) {
+    /* Navbar positioning foo */
+    .head-wrap {
+        margin-top: 20px;
+        margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    /* Bump up size of carousel content */
+    #myCarousel .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: 1.4;
+    }
+}
+</style>
 <div class="contain-wrap">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 	      <% if @company.com_carousel.present? %>
