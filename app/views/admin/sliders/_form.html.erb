@@ -1,11 +1,11 @@
-<%= image_tag "ss.png", size: "700x280" %>
+ <!--<%#= image_tag "ss.png", size: "700x280" %>-->
 <%= form_for([:admin, @slider]) do |f| %>
   <%= render partial: "shared/error_messages", locals: {obj: @slider} %>
     <div class="form-group">
       <label for="name">图片描述</label>
       <%= f.text_field :name, class: "form-control", placeholder: "图片描述" %>
     </div>
-    <div class="form-group">
+    <div class="form-group" hidden>
       <label for="style">图片类型</label>
       <%= f.select :style, Slider::SLIDER_TYPE.invert, {}, class: "form-control" %>
     </div>

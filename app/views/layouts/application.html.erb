@@ -36,9 +36,11 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path %></li>
-                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "产品列表", products_path %></li>
+                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "在线商城", products_path %></li>
                 <li><a href="#">私人定制</a></li>
-                <li><a href="#">关于我们</a></li>
+                <li class="<%= 'active' if controller_name =="companies"%>"><%= link_to "关于我们", intro_path%></a></li>
+                <li class="<%= 'active' if controller_name =="contacts"%>"><%= link_to "联系我们", contacts_path%></a></li>
+              <!--<li><a href="#">联系我们</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right" id="ECS_MEMBERZONE">
                 <li>
@@ -59,15 +61,15 @@
     <%= yield %>
     <div class="foot-wrap">
         <div class="container">
-    <p class="pull-left">© 2005-2015 燃点酒业 版权所有，并保留所有权利。<a href="http://www.bootply.com/62603">京ICP备14055790号</a></p>
-    <ul class="pull-right list-inline">
-            <li><a href="http://www.yitongbaijiu.com/article_cat.php?id=6">官网视频</a></li>
-            <li><a href="http://www.yitongbaijiu.com/article.php?id=9">服务与支持</a></li>
-            <li><a href="http://www.yitongbaijiu.com/article.php?id=5">公司简介</a></li>
-            <li><a href="http://www.yitongbaijiu.com/article.php?id=7">联系我们</a></li>
-            <li><a href="http://www.yitongbaijiu.com/article_cat.php?id=8">招贤纳士</a></li>
-            <li><a href="http://m.kuaidi100.com/">快递查询</a></li>
-        </ul>
+    <p class="pull-left">© 2005-2015 朴客酒业 版权所有，并保留所有权利。<a href="#">京ICP备14055790号</a></p>
+    <!--<ul class="pull-right list-inline">-->
+            <!--<li><a href="http://www.yitongbaijiu.com/article_cat.php?id=6">官网视频</a></li>-->
+            <!--<li><a href="http://www.yitongbaijiu.com/article.php?id=9">服务与支持</a></li>-->
+            <!--<li><a href="http://www.yitongbaijiu.com/article.php?id=5">公司简介</a></li>-->
+            <!--<li><a href="http://www.yitongbaijiu.com/article.php?id=7">联系我们</a></li>-->
+            <!--<li><a href="http://www.yitongbaijiu.com/article_cat.php?id=8">招贤纳士</a></li>-->
+            <!--<li><a href="http://m.kuaidi100.com/">快递查询</a></li>-->
+        <!--</ul>-->
 </div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["tsina","weixin","qzone","renren","tqq","kaixin001","tieba","douban","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 <script>
