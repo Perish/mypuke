@@ -13,23 +13,6 @@
  *= require_self
  */
 @import "bootstrap-sprockets";
-$navbar-default-bg: #1976d2;
-$navbar-default-link-color: white;
-$navbar-default-link-hover-color: white;
-$navbar-default-link-hover-bg: #ea80fc;
-$navbar-default-link-disabled-color: white;
-$navbar-default-link-disabled-bg: #ea80fc;
-$dropdown-bg: #1976d2;
-$dropdown-link-hover-bg: #ea80fc;
-$dropdown-link-active-bg: #ea80fc;
-$dropdown-link-color: white;
-$dropdown-link-hover-color: white;
-$carousel-indicator-active-bg: #c5cae9;
-$carousel-indicator-border-color: #e8eaf6;
-$carousel-caption-color: #455a64;
-$panel-primary-border: #eeeeee;
-$panel-primary-heading-bg: #1976d2;
-$panel-body-padding: 10px;
 @import "bootstrap";
-@import "font-awesome";
-@import "welcome";
+@import "bootstrap-theme.min";
+@import "style";

@@ -13,4 +13,8 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-
+//= require hm
+//= require common
+//= require index
+//= require share
+//= rquire masonry.pkgd.min

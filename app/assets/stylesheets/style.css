@@ -1,0 +1,295 @@
+/*
+Template Name: T.TT
+Template URI: http://www.jhbros.com/
+Description: 锤子模版
+Version: 2.71
+Author: YU
+Author URI: http://www.jhbros.com/
+Logo filename: logo.gif
+\\
+*/
+
+
+/* BOOTSTRAP 3.x GLOBAL STYLES
+ * -------------------------------------------------- */
+body {
+    padding-bottom: 40px;
+    color: #5a5a5a;
+    background-color: #eee;
+}
+
+/*CUSTOMIZE THE ECS_MEMBERZONE */
+#ECS_MEMBERZONE li {
+    padding-top: 15px;
+}
+#ECS_MEMBERZONE li a {
+    display: inline;
+    padding: 5px 5px;
+}
+
+
+.logo {
+    width: 163px;
+    height: 46px;
+    background: url(images/logo.png) no-repeat;
+}
+
+/* MARKETING CONTENT
+ * -------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.marketing h2 {
+    font-weight: normal;
+}
+.marketing .col-lg-4 p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.marketing a.item {
+    padding: 0;
+}
+
+/* Featurettes
+ * ------------------------- */
+
+.featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
+    padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+    overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+    margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+ }
+
+ /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+ .featurette-image.pull-left {
+     margin-right: 40px;
+ }
+ .featurette-image.pull-right {
+     margin-left: 40px;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+/* CATEGORY 
+ * ------------------------- */
+.goods-list {
+    border: 1px solid transparent;
+    background-color: #ddd;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    border-radius: 4px;
+    padding: 0;
+    margin: 2px;
+    overflow: hidden;
+}
+.goods-list .goods-item {
+    padding: 0;
+    margin: 0 0 1px 0;
+    /*
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    */
+    overflow: hidden;
+}
+
+.goods-list .goods-item a {
+    display: block;
+    color: #000;
+}
+
+.goods-list .goods-item:hover {
+    border: 1px solid #eee;
+}
+
+.goods-list .goods-item .goods-desc {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 10px;
+    right: 20px;
+}
+
+.goods-list .goods-item .promotion {
+    position: absolute;
+    top: 3px;
+    left: 1px;
+}
+
+i.mz{background:#f1bd08;}
+i.tuan{background:#C60}
+i.mj{background:#777;}
+i.zk{background:#a94442;}
+i.tbqb{background:#f59c00;}
+i.pm{background: #777;}
+
+/* GOODS
+ * ------------------------- */
+.goods-info ul li {
+    padding: 30px 10px;
+    border-bottom: 1px solid #ddd;
+}
+.goods-info ul li:last-child {
+    border-bottom: none;
+}
+.goods-info ul li .btn-spin {
+    width: 125px;
+    margin-right: 10px;
+}
+.btn-spin button {
+    height: 34px;
+}
+
+.comment-stats {
+    border-bottom: 1px solid #ddd;
+}
+.comment-stats .item {
+    float: left;
+    width: 32%;
+    margin: 0 3px 10px;
+    padding: 10px 10px;
+    height: 120px; 
+    border-right: 1px solid #ddd;
+}
+.comment-stats .item:last-child {
+    border-right: none;
+}
+.comment-stats .rate > p {
+    padding-top: 5px;
+}
+.comment-stats .btns > div {
+    padding-top: 30px;
+}
+
+/* VIDEOS
+ * ------------------------- */
+.video-list .item {
+    padding: 0;
+    margin: 17px 17px;
+    overflow: hidden;
+    float: left;
+}
+
+
+/* USER
+ * ------------------------- */
+.common-form {
+    width: 427px;
+    margin: 20px auto;
+    padding: 20px 0 20px;
+}
+
+/* FLOW
+ * ------------------------- */
+.valign-table > tbody > tr > td,
+.valign-table > tbody > tr > th {
+    vertical-align: middle;
+}
+.cart-table .btn-spin {
+    width: 125px;
+}
+
+#sidebar li {
+    border-bottom: 1px #f2f2f2 solid;
+}
+
+/* CAPTCHA
+ * ------------------------- */
+.captcha > input {
+    display: inline;
+    width: 136px;
+}
+
+.captcha > img {
+    height: 34px;
+}
+
+/* BONUS CSS
+ * -------------------------------------------------- */
+.bonus {
+    padding: 120px 0;
+    background-color: red;
+}
+
+/* ARTICLE 
+ * ------------------------- */
+.article-banner {
+    padding-bottom: 15px;
+}
+
+/* RESPONSIVE CSS
+ * -------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /* Remve the edge padding needed for mobile */
+    .marketing {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Navbar positioning foo */
+    .head-wrap {
+        margin-top: 20px;
+    }
+    /* The navbar becomes detached from the top, so we round the corners */
+    .head-wrap .navbar {
+        border-radius: 4px;
+    }
+
+    .foot-wrap {
+        padding-top: 10px;
+        margin-top: 20px;
+        background-color: #f1f1f1;
+    }
+
+}
+
+/* 支付宝网银 by www.edait.cn */
+.banklist table{margin:5px 0px;}
+.banklist span{border:1px solid #ccc;margin:5px 10px 5px 5px;display:inline-block;*display:block;width:123px;height:30px;vertical-align:top;background:#fff url(/images/alipay_bank.png) no-repeat 0 0;text-indent:-9999em;}
+.banklist .icbc{background-position:0 -40px}
+.banklist .ccb{background-position:0 -320px}
+.banklist .abc{background-position:0 -480px}
+.banklist .psbc{background-position:0 -400px}
+.banklist .comm{background-position:0 -600px}
+.banklist .cmb{background-position:0 -80px}
+.banklist .boc{background-position:0 -520px}
+.banklist .ceb{background-position:0 -440px}
+.banklist .citic{background-position:0 -200px}
+.banklist .sdb{background-position:0 -240px}
+.banklist .spdb{background-position:0 -360px}
+.banklist .cmbc{;background-position:0 -120px}
+.banklist .cib{background-position:0 -3365px}
+.banklist .spabank{background-position:0 -1880px}
+.banklist .gdb{background-position:0 -280px}
+.banklist .shrcb{background-position:0 -2480px}
+.banklist .shbank{background-position:0 -840px}
+.banklist .nbbank{background-position:0 -1240px}
+.banklist .hzcb{background-position:0 -760px}
+.banklist .bjbank{background-position:0 -3240px}
+.banklist .bjrcb{background-position:0 -2640px}
+.banklist .fdb{background-position:0 -1320px}
+.banklist .wzcb{background-position:0 -1720px}
+.banklist .icbcbtb{background-position:0 -4829px}
+.banklist .ccbbtb{background-position:0 -4873px}
+.banklist .abcbtb{background-position:0 -4916px}
+.banklist .spdbb2b{background-position:0 -4960px}
+.bank_btn{background:url(/images/alipay_bank_but.png) repeat-x center;width:157px;height:33px;margin:auto;}

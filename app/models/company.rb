@@ -12,7 +12,7 @@ class Company < ActiveRecord::Base
   validates :name, :summary, :content, :main_url,  presence: true
 
   def sandom_products
-  	products.sample(4)
+  	products.sample(3)
   end
 
   def com_top

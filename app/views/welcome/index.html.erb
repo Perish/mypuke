@@ -1,180 +1,112 @@
-<div class="row">
-<div class="col-md-12">
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  		<!-- Indicators -->
-  		<% if @company.com_carousel.present? %>
-  			<% num = @company.com_carousel.size-1 %>
-	  		<ol class="carousel-indicators">
-	  			<% 0.upto(num) do |cot| %>
-	    		<li data-target="#carousel-example-generic" data-slide-to="<%= cot %>" class="<%= "active" if cot==0 %>"></li>
-	  			<% end %>
-	  		</ol>
-	  		<div class="carousel-inner" role="listbox">
-	  			<% @company.com_carousel.each_with_index do |carousel, index| %>
-	    		<div class="item <%= "active" if index==0 %>">
-		      		<%= image_tag carousel.pic_url || "default.jpg", style: "height: 380px; width: 100%;" %>
-		      		<div class="carousel-caption">
-		       	 		<%= carousel.name %>
-		      		</div>
-	   	 		</div>
-	   	 		<% end %>
-	  		</div>
-  		<% else %>
-	  		<ol class="carousel-indicators">
-	    		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-	    		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-	    		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-	  		</ol>
-
-	  		<!-- Wrapper for slides -->
-	  		<div class="carousel-inner" role="listbox">
-	    		<div class="item active">
-	      		<img src="/assets/default.jpg" alt="..."  style="height: 380px; width: 100%;">
-	      		<div class="carousel-caption">
-	       	 	还没有轮播图片哟~！
-	      		</div>
-	   	 	</div>
-	    		<div class="item">
-	      		<img src="/assets/default.jpg" alt="..."  style="height: 380px; width: 100%;">
-	      		<div class="carousel-caption">
-	       	 	还没有轮播图片哟~！
-	      		</div>
-	    		</div>
-	  		</div>
-	  		<% end %>
-
-	  			<!-- Controls -->
-	  			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-	    			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	    			<span class="sr-only">下一张</span>
-	  			</a>
-	  			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-	    			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	    			<span class="sr-only">上一张</span>
-	  			</a>
-		</div>
+<style type="text/css">
+body {
+    background-color: #ffffff;
+}
+.notify-wrap div {
+    margin: 0;
+}
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.head-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+/* CUSTOMIZE THE CAROUSEL
+ * -------------------------------------------------- */
+/* Main Carousel base class */
+.carousel {
+    margin-bottom: 20px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-inner .carousel-caption {
+    z-index: 1;
+}
+/* Declare heights because of positioning of img element */
+.carousel-inner .item {
+    background-color:#555;
+}
+.carousel-inner .item img {
+}
+/* RESPONSIVE CSS
+ * -------------------------------------------------- */
+@media (min-width: 768px) {
+    /* Navbar positioning foo */
+    .head-wrap {
+        margin-top: 20px;
+        margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    /* Bump up size of carousel content */
+    #myCarousel .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: 1.4;
+    }
+}
+</style>
+<div class="contain-wrap">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	      <% if @company.com_carousel.present? %>
+	        <% num = @company.com_carousel.size-1 %>
+	          <ol class="carousel-indicators">
+	            <% 0.upto(num) do |cot| %>
+	            <li data-target="#myCarousel" data-slide-to="<%= cot %>" class="<%= "active" if cot==0 %>"></li>
+	            <% end %>
+	          </ol>
+	          <div class="carousel-inner">
+	            <% @company.com_carousel.each_with_index do |carousel, index| %>
+	              <div class="item <%= "active" if index==0 %>">
+	                <a href="#">
+	                    <%= image_tag carousel.pic_url || "default.jpg", class: "img-responsive center-block", alt: "" %>
+	                </a>
+	              </div>
+	            <% end %>
+	          </div>
+	      <% else %>
+	        <ol class="carousel-indicators">
+	            <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+	            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+	            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+	        </ol>
+	        <div class="carousel-inner">
+	            <div class="item">
+	                <a href="#">
+	                    <img src="/assets/header.png" class="img-responsive center-block" alt="puke">
+	                </a>
+	            </div>
+	            <div class="item active">
+	                <a href="#">
+	                    <img src="/assets/default.jpg" class="img-responsive center-block" alt="puke">
+	                </a>
+	            </div>
+	            <div class="item">
+	                <a href="http://www.yitongbaijiu.com/goods.php?id=7">
+	                    <img src="/assets/default.jpg" class="img-responsive center-block" alt="puke">
+	                </a>
+	            </div>
+	        </div>
+	      <% end %>
+	          <!-- Controls -->
+	          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+	        <span class="icon-prev"></span>
+	          </a>
+	          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+	        <span class="icon-next"></span>
+	          </a>
 	</div>
-</div>
-<div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-primary">
-			  <div class="panel-heading">
-			  <h3 class="panel-title"><%= fa_icon("th-large") %>&nbsp;产品展示
-			  	<%= link_to products_path, class: "pull-right" do %>
-					<small class="more">更多<%= fa_icon("signal") %></small>
-			  	<% end %>
-			  </h3>
-			  </div>
-			  <div class="panel-body">
-			<div class="row">
-  			  <% @company.sandom_products.each do |product| %>
-			      <div class="col-xs-6 col-md-3">
-			        <a href="#" class="thumbnail">
-			          <%= image_tag product.pic_url || "default.jpg", alt: "100%x180", style: "height: 180px; width: 100%; display: block;", data: {"holder-rendered" => true} %>
-					  <div class="text-center">
-					    <%= product.name %>
-					  </div>
-			        </a>
-			      </div>
-  			  <% end %>
-  			  <% if @company.sandom_products.blank? %>
-  			  <p class="text-center">还没有相关产品哟~！</p>
-  			  <% end %>
-			</div>
-			  </div>
+
+	  <div class="container">
+	      <div class="row marketing">
+	      <% @company.sandom_products.each do |product| %>
+	          <div class="col-xs-4 col-md-4 text-center">
+	              <div>
+	                  <%= link_to product, class: "thumbnail item", title: product.name do %>
+		          		<%= image_tag product.pic_url || "default.jpg", class: "img-rounded" %>
+		          		<% end %>
+	              </div>
+	          </div>
+	     <% end %>
+	      </div>
 	  </div>
-  </div>
-</div>
-<div class="row">
-	<div class="col-md-8">
-			<div class="panel panel-primary">
-			  <div class="panel-heading">
-  			  <h3 class="panel-title"><%= fa_icon("home") %>&nbsp;公司介绍
-				<%= link_to intro_path, class: "pull-right" do %>
-					<small class="more">更多<%= fa_icon("signal") %></small>
-				<% end %>
-			  </h3>
-			  </div>
-			  <div class="panel-body">
-  				<div class="col-md-5">
-  					<%= link_to intro_path, class: "thumbnail" do %>
-    					<%= image_tag @company.pic_url || "default.jpg", alt: "100%x180", style: "height: 180px; width: 100%; display: block;", data: {"holder-rendered" => true} %>
-    				<% end %>
-  				</div>
-  				<div class="col-md-7">
-					<h5><%= @company.name || "暂无公司名称" %></h5>
-					<p><!-- 泗水力凯机械有限公司，位于泗水高新技术经济开发区，东临日照，西邻曲阜地理位置优越，327国道横贯公司大门，四通八达，交通便利，泗水得力食品机械有限公司，是生产各种优质饼干生产线成套设备，桃酥流水生产设备，滚筒式杏元机流水线设备，及馍片成套生产线设备，滚筒式杏元机械流水线设备，始终立于食品机械流水线设备制造行业的前言，具有一流的生产加工设备，一流的产品质量，一流的科技队伍，一流的售后服务，为了迎合市场的需求。 --><%= strip_tags(@company.summary) || "还没有公司介绍哟~！" %></p>
-				</div>
-			  </div>
-		  </div>
-	</div>
-	<div class="col-md-4">
-			<div class="panel panel-primary">
-			  <div class="panel-heading">
-  			  <h3 class="panel-title"><%= fa_icon("mobile-phone") %>&nbsp;联系我们
-				<%= link_to contacts_path, class: "pull-right" do %>
-					<small class="more">更多<%= fa_icon("signal") %></small>
-				<% end %>
-  			  </h3>
-			  </div>
-			  <div class="panel-body">
-			  	<% if @company.contact.blank? %>
-					<p class="text-center">还没有联系方式哟~！</p>
-			  	<% else %>
-					<%= sanitize @company.contact.content %>
-			  	<% end %>
-			  </div>
-		  </div>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-6">
-			<div class="panel panel-primary">
-			  <div class="panel-heading">
-  			  <h3 class="panel-title"><%= fa_icon("location-arrow") %>&nbsp;公司动态
-				<%= link_to infos_path(flag: 1), class: "pull-right" do %>
-					<small class="more">更多<%= fa_icon("signal") %></small>
-				<% end %>
-  			  </h3>
-			  </div>
-			  <div class="panel-body">
-				  <ul class="list-group">
-				  <% @company.infos.lastest_cinfos.each do |info| %>
-  					<li class="list-group-item">
-  						<a href="#" class="text-muted"><%= info.name %></a>
-  						<span class="pull-right text-muted"><%= info.created_at.strftime("%F") %></span>
-  					</li>
-				  <% end %>
-				</ul>
-
-  			  <% if @company.infos.lastest_cinfos.blank? %>
-  			  <p class="text-center">还没有公司动态哟~！</p>
-  			  <% end %>
-			  </div>
-		  </div>
-	</div>
-	<div class="col-md-6">
-			<div class="panel panel-primary">
-			  <div class="panel-heading">
-  			  <h3 class="panel-title"><%= fa_icon("location-arrow") %>&nbsp;行业动态
-				<%= link_to infos_path(flag: 2), class: "pull-right" do %>
-					<small class="more">更多<%= fa_icon("signal") %></small>
-				<% end %>
-  			  </h3>
-			  </div>
-			  <div class="panel-body">
-				  <ul class="list-group">
-				  <% @company.infos.lastest_iinfos.each do |info| %>
-  					<li class="list-group-item">
-  						<a href="#" class="text-muted"><%= info.name %></a>
-  						<span class="pull-right text-muted"><%= info.created_at.strftime("%F") %></span>
-  					</li>
-				  <% end %>
-				</ul>
-  			  <% if @company.infos.lastest_iinfos.blank? %>
-  			  <p class="text-center">还没有行业动态哟~！</p>
-  			  <% end %>
-			  </div>
-		  </div>
-	</div>
 </div>

@@ -18,82 +18,69 @@
     <![endif]-->
     <%= javascript_include_tag 'application' %>
 <!-- <script type='text/javascript' src='http://message.ckefu.com/js/73b6761582324dbdbe6eea3ed45bb339/2323.js' charset='UTF-8' data-turbolinks-track="false"></script> -->
+<link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/slide_share.css?v=855af98e.css">
 </head>
 <body>
-<div class="container">
-	<div class="header-top">
-		今天是<%= time_day %>，欢迎光临本站 <span class="text-danger"><%= @company.name %></span>
-    <%= link_to "网址： #{@company.main_url}", "http://#{@company.main_url}", target: "_blank" %>
-		<div class="pull-right small">
-			<%= link_to "后台管理", admin_home_path, target: "_blank" %>
-		</div>
-	</div>    
-  <div class="row text-center header-img">
-    <%= image_tag @company.com_top.present? ? @company.com_top.pic_url : "header.png", width: "100%"%>
-  </div>
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
+ <div class="head-wrap">
+        <div class="container">
+    <div class="navbar navbar-inverse">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="navbar-brand logo" href="http://www.yitongbaijiu.com/index.php"></a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="<%= 'active' if controller_name=='welcome' %>">
-              <%= link_to "首页", root_path %>
-            </li>
-            <li class="<%= 'active' if controller_name=='companies' %>">
-              <%= link_to "公司介绍", intro_path %>
-            </li>
-            <li class="<%= 'active' if controller_name=='products' %>">
-              <%= link_to "产品展示", products_path %>
-            </li>
-            <li class="<%= 'active' if controller_name=='infos' && params[:flag]=="1" %>">
-              <%= link_to "公司动态", infos_path(flag: 1) %>
-            </li>
-            <li class="<%= 'active' if controller_name=='infos' && params[:flag]=="2"  %>">
-              <%= link_to "行业动态", infos_path(flag: 2) %>
-            </li>
-            <li class="<%= 'active' if controller_name=='contacts'  %>">
-              <%= link_to "联系我们", contacts_path %>
-            </li>
-            <li class="<%= 'active' if controller_name=='invites'  %>">
-              <%= link_to "招聘信息", invites_path %>
-            </li>
-            <li class="<%= 'active' if controller_name=='awards'  %>">
-              <%= link_to "企业殊荣", awards_path %>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="javascript:void(0);" onclick="SetHome(this, location.href);">设为首页</a>
-            </li>
-            <li>
-              <a href="javascript:void(0);" onclick="AddFavorite('<%= @company.name %>', location.href)">收藏本站</a>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </nav>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path %></li>
+                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "产品列表", products_path %></li>
+                <li><a href="#">私人定制</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" id="ECS_MEMBERZONE">
+                <li>
+                    
+<a href="http://www.yitongbaijiu.com/user.php" rel="nofollow">登录</a>|<a href="http://www.yitongbaijiu.com/user.php?act=register" rel="nofollow">注册</a>
+
+| 
+<a id="ECS_CARTINFO" href="http://www.yitongbaijiu.com/flow.php" title="查看购物车">
+    <span class="glyphicon glyphicon-shopping-cart"></span>
+    查看购物车<span class="badge">0</span>
+</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
-<div class="container content">
-	<%= yield %>
+    </div>
+    <%= yield %>
+    <div class="foot-wrap">
+        <div class="container">
+    <p class="pull-left">© 2005-2015 燃点酒业 版权所有，并保留所有权利。<a href="http://www.bootply.com/62603">京ICP备14055790号</a></p>
+    <ul class="pull-right list-inline">
+            <li><a href="http://www.yitongbaijiu.com/article_cat.php?id=6">官网视频</a></li>
+            <li><a href="http://www.yitongbaijiu.com/article.php?id=9">服务与支持</a></li>
+            <li><a href="http://www.yitongbaijiu.com/article.php?id=5">公司简介</a></li>
+            <li><a href="http://www.yitongbaijiu.com/article.php?id=7">联系我们</a></li>
+            <li><a href="http://www.yitongbaijiu.com/article_cat.php?id=8">招贤纳士</a></li>
+            <li><a href="http://m.kuaidi100.com/">快递查询</a></li>
+        </ul>
 </div>
-<footer class="footer">
-    <div class="container">
-		<div class="row" style="height: 40px; padding-top: 10px;">
-		    <div class="col-md-4"><div class="text-right"><span class="text-muted">版权所有：朴客有限公司</span></div></div>
-		    <div class="col-md-4"><div class="text-center"><span class="text-muted">技术支持：<a href="#" class="text-muted">zero-to-one</a></span></div></div>
-		    <div class="col-md-4"><div class="text-left"><span class="text-muted">备案号：<a href="http://www.miibeian.gov.cn/" class="text-muted">鲁ICP备09027874号</a></span></div></div>
-  	  	</div>
-	</div>
-  </footer>
-  
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["tsina","weixin","qzone","renren","tqq","kaixin001","tieba","douban","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+      var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?abfe9d99331824e0fc3daf752f5f889f";
+          var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    </div>
+<div class="bdshare-slide-button-box bdshare-slide-style-r0" style="top: 100px; width: 0px; z-index: 99999; right: 0px;" data-bd-bind="1438614528979"><a href="http://www.yitongbaijiu.com/#" onclick="return false;" class="bdshare-slide-button" style="left: -24px;"></a><div class="bdshare-slide-list-box" style="width: 0px; display: none;"><div class="bdshare-slide-top">分享到</div><div class="bdshare-slide-list"><ul class="bdshare-slide-list-ul" style="width: 116px;"></ul></div><div class="bdshare-slide-bottom" style="width: 116px;"><a href="http://www.yitongbaijiu.com/#" onclick="return false;" class="slide-more" data-cmd="more">更多...</a></div></div></div><div id="shadowMeasureIt"></div><div id="divCoordMeasureIt"></div><div id="divRectangleMeasureIt"><div id="divRectangleBGMeasureIt"></div></div>
   <script type="text/javascript">
 function SetHome(obj,url){
     try{
@@ -127,8 +114,6 @@ function AddFavorite(title, url) {
     }
 }
 </script>
-
-<%= javascript_include_tag "http://message.ckefu.com/js/73b6761582324dbdbe6eea3ed45bb339/2323.js",  :charset=>"utf-8" %>
 
 </body>
 </html>
