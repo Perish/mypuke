@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    get "spread", on: :collection
+  end
   resources :infos, only: [:index, :show]
   resources :invites, only: [:index, :show]
   resources :contacts, only: [:index, :create]

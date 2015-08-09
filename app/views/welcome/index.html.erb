@@ -47,19 +47,19 @@ body {
 </style>
 <div class="contain-wrap">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-	      <% if @company.com_carousel.present? %>
-	        <% num = @company.com_carousel.size-1 %>
+	      <% if @company.spreads.present? %>
+	        <% num = @company.spreads.limit(2).size-1 %>
 	          <ol class="carousel-indicators">
 	            <% 0.upto(num) do |cot| %>
 	            <li data-target="#myCarousel" data-slide-to="<%= cot %>" class="<%= "active" if cot==0 %>"></li>
 	            <% end %>
 	          </ol>
 	          <div class="carousel-inner">
-	            <% @company.com_carousel.each_with_index do |carousel, index| %>
+	            <% @company.spreads.each_with_index do |product, index| %>
 	              <div class="item <%= "active" if index==0 %>">
-	                <a href="#">
-	                    <%= image_tag carousel.pic_url || "default.jpg", class: "img-responsive center-block", alt: "" %>
-	                </a>
+	                <%= link_to spread_products_path do %>
+	                    <%= image_tag product.pic_url || "default.jpg", class: "img-responsive center-block", alt: "" %>
+	                <% end %>
 	              </div>
 	            <% end %>
 	          </div>
@@ -81,7 +81,7 @@ body {
 	                </a>
 	            </div>
 	            <div class="item">
-	                <a href="http://www.yitongbaijiu.com/goods.php?id=7">
+	                <a href="#">
 	                    <img src="/assets/default.jpg" class="img-responsive center-block" alt="puke">
 	                </a>
 	            </div>

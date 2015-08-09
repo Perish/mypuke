@@ -6,4 +6,9 @@ class ProductsController < ApplicationController
   def show
   	@product = @company.products.find(params[:id])
   end
+
+  def spread
+  	@product = @company.products.limit(2)
+  end
+  
 end
