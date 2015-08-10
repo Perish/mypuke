@@ -17,4 +17,3 @@
 //= require common
 //= require index
 //= require share
-//= rquire masonry.pkgd.min

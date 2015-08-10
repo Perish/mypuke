@@ -22,4 +22,8 @@ class Company < ActiveRecord::Base
   def com_carousel
     sliders.carousel.limit(4)
   end
+
+  def spreads
+    products.limit(2)
+  end
 end
