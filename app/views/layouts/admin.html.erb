@@ -54,7 +54,7 @@
 			<div class="col-md-2" role="complementary">
 				<ul class="nav nav-list admin-nav-list">
 					<li class="<%= "active" if params[:controller].match(/companies/) %>">
-						<%= link_to "公司介绍", new_admin_company_path %>
+						<%= link_to "关于我们", new_admin_company_path %>
 					</li>
 					<li class="<%= "active" if params[:controller].match(/sliders/) %>">
 						<%= link_to "轮播和顶部图片", admin_sliders_path %>
@@ -62,18 +62,18 @@
 					<li class="<%= "active" if params[:controller].match(/products/) %>">
 						<%= link_to "产品列表", admin_products_path %>
 					</li>
-					<li class="<%= "active" if params[:controller].match(/infos/) %>">
-						<%= link_to "资讯动态", admin_infos_path %>
-					</li>
+					<!--<li class="<%= "active" if params[:controller].match(/infos/) %>">-->
+						<!--<%#= link_to "资讯动态", admin_infos_path %>-->
+					<!--</li>-->
 					<li class="<%= "active" if params[:controller].match(/contacts/) %>">
 						<%= link_to "联系我们", new_admin_contact_path %>
 					</li>
-					<li class="<%= "active" if params[:controller].match(/invites/) %>">
-						<%= link_to "招聘信息", admin_invites_path %>
-					</li>
-					<li class="<%= "active" if params[:controller].match(/awards/) %>">
-						<%= link_to "企业殊荣", admin_awards_path %>
-					</li>
+					<!--<li class="<%= "active" if params[:controller].match(/invites/) %>">-->
+						<!--<%#= link_to "招聘信息", admin_invites_path %>-->
+					<!--</li>-->
+					<!--<li class="<%= "active" if params[:controller].match(/awards/) %>">-->
+						<!--<%#= link_to "企业殊荣", admin_awards_path %>-->
+					<!--</li>-->
                   <li class="<%= "active" if params[:controller].match(/users/) %>">
                     <%= link_to "用户管理", admin_users_path %>
                   </li>

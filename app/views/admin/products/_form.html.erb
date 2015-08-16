@@ -6,6 +6,10 @@
       <%= f.text_field :name, class: "form-control", placeholder: "产品名称" %>
     </div>
     <div class="form-group">
+      <label for="name">产品价格</label>
+      <%= f.text_field :price, class: "form-control", placeholder: "产品价格" %>
+    </div>
+    <div class="form-group">
       <label for="profile">产品详情</label>
     <%= f.text_area :content, class: "form-control", placeholder: "产品详情", id: "editor" %>
     </div>
