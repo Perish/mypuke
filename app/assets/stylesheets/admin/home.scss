@@ -14,7 +14,7 @@
  *= require simditor
  */
 $navbar-default-bg: white;
-@import "bootstrap-sprockets";
-@import "bootstrap";
+ @import "bootstrap.min";
+@import "bootstrap-theme.min";
 @import "font-awesome";
 @import "custom";

@@ -24,6 +24,6 @@ class Company < ActiveRecord::Base
   end
 
   def spreads
-    products.limit(2)
+    products.limit(4)
   end
 end

@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+<meta name="Generator" content="ECSHOP v2.7.3">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
   <meta name="keywords" content="<%= @company.name %>, puke, 白酒, 朴客白酒">
   <meta name="description" content="朴客酒">
   <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -15,7 +17,6 @@
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <%= javascript_include_tag 'application' %>
 <!-- <script type='text/javascript' src='http://message.ckefu.com/js/73b6761582324dbdbe6eea3ed45bb339/2323.js' charset='UTF-8' data-turbolinks-track="false"></script> -->
 </head>
 <body>
@@ -34,10 +35,10 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path %></li>
-                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "在线商城", products_path %></li>
+                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "在线商城", spread_products_path %></li>
                 <li><a href="#">私人定制</a></li>
-                <li class="<%= 'active' if controller_name =="companies"%>"><%= link_to "关于我们", intro_path%></a></li>
-                <li class="<%= 'active' if controller_name =="contacts"%>"><%= link_to "联系我们", contacts_path%></a></li>
+                <li class="<%= 'active' if controller_name =="companies"%>"><%= link_to "关于我们", root_path%></a></li>
+                <li class="<%= 'active' if controller_name =="contacts"%>"><%= link_to "联系我们", root_path %></a></li>
               <!--<li><a href="#">联系我们</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right" id="ECS_MEMBERZONE">
@@ -59,7 +60,7 @@
     <%= yield %>
     <div class="foot-wrap">
         <div class="container">
-    <p class="pull-left">© 2005-2015 朴客酒业 版权所有，并保留所有权利。<a href="#">京ICP备14055790号</a></p>
+    <p class="pull-left">© 2005-2015 朴客酒 版权所有，并保留所有权利。<a href="#">京ICP备14055790号</a></p>
     <!--<ul class="pull-right list-inline">-->
             <!--<li><a href="http://www.yitongbaijiu.com/article_cat.php?id=6">官网视频</a></li>-->
             <!--<li><a href="http://www.yitongbaijiu.com/article.php?id=9">服务与支持</a></li>-->
@@ -69,6 +70,8 @@
             <!--<li><a href="http://m.kuaidi100.com/">快递查询</a></li>-->
         <!--</ul>-->
 </div>
+    <%= javascript_include_tag 'application' %>
+
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["tsina","weixin","qzone","renren","tqq","kaixin001","tieba","douban","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 <script>
 var _hmt = _hmt || [];

@@ -1,8 +1,4 @@
 <style type="text/css">
-body {
-    background-color: #ffffff;
-    padding-top: 70px;
-}
 .notify-wrap div {
     margin: 0;
 }
@@ -28,6 +24,12 @@ body {
 .carousel-inner .item {
     background-color:#555;
 }
+.carousel-indicators li {
+	border: 1px solid blue;
+}
+.carousel-indicators .active {
+	background-color: blue;
+}
 .carousel-inner .item img {
 }
 /* RESPONSIVE CSS
@@ -49,7 +51,7 @@ body {
 <div class="contain-wrap">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 	      <% if @company.spreads.present? %>
-	        <% num = @company.spreads.limit(2).size-1 %>
+	        <% num = @company.spreads.size-1 %>
 	          <ol class="carousel-indicators">
 	            <% 0.upto(num) do |cot| %>
 	            <li data-target="#myCarousel" data-slide-to="<%= cot %>" class="<%= "active" if cot==0 %>"></li>
@@ -89,12 +91,12 @@ body {
 	        </div>
 	      <% end %>
 	          <!-- Controls -->
-	          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+	          <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 	        <span class="icon-prev"></span>
 	          </a>
 	          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
 	        <span class="icon-next"></span>
-	          </a>
+	          </a> -->
 	</div>
 
 	  <div class="container">

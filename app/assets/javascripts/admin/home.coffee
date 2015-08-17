@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 #= require jquery
-#= require bootstrap-sprockets
 #= require jquery_ujs
+#= require bootstrap.min
 #= require turbolinks
 #= require simditor
