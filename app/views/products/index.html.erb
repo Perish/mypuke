@@ -36,7 +36,7 @@
                     }
             </style>
 <ul id="myGoods" class="goods-list list-unstyled">
-    <% @company.products.each_with_index do |product, cot| %>
+    <% @products.each_with_index do |product, cot| %>
 
     <li class="goods-item <%= masonry(cot%8) %>">
                     <%= link_to product do %>
@@ -60,8 +60,8 @@
     <% end %>
             </ul>
 
-        <% if @company.products.present? %>
-            <%= paginate @company.products %>
+        <% if @products.present? %>
+            <%= paginate @products %>
         <% end %>
         </div>
     </div>
