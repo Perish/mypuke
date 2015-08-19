@@ -23,7 +23,7 @@
 		    </div>
 		    <div class="form-group">
 		      <label for="profile">公司详情</label>
-			  <%= f.text_area :content, class: "form-control", placeholder: "公司详情", id: "editor" %>
+			  <%= f.text_area :content, placeholder: "公司详情", id: "editor" %>
 		    </div>
 				<div class="form-group">
 					<label for="pic">公司图片</label>
@@ -32,10 +32,13 @@
 				</div>
 			<%= f.button "更新", class: "btn btn-success", data: { disable_with: "#{fa_icon("spinner spin", text: "更新...")}" } %>
 		<% end %>
-		<script>
-		var editor = new Simditor({
-		  textarea: $('#editor')
-		});
-		</script>
+
+  <script>
+  $(function(){
+    var editor = new UE.ui.Editor();
+    editor.render("editor");
+    // $("#editor").hide();
+  });
+  </script>
 	</div>
 </div>
