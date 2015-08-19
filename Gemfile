@@ -40,6 +40,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'baidu_ueditor_rails'
 
 # Pagination
 gem 'kaminari', '~> 0.16.3'

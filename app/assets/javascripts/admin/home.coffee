@@ -5,4 +5,5 @@
 #= require jquery_ujs
 #= require bootstrap.min
 #= require turbolinks
-#= require simditor
+#= require baidu_ueditor
+#= require ueditor_custom_config

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :invites, only: [:index, :show]
   resources :contacts, only: [:index, :create]
 
+  resources :ueditor_images, only: [:create]
+
   get "intro", to: "companies#show", as: "intro"
   get 'awards', to: "awards#index", as: "awards"
 
