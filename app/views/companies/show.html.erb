@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row">
 	<div class="col-md-12">
 		<div class="shared-breadcrumb">
@@ -9,34 +10,12 @@
 		</div>
 	</div>
 </div>
-<div class="row">
-	<!--<%#= render "products/product_sider" %>-->
-	<div class="col-md-8">
-		<div class="panel panel-primary">
-		  <div class="panel-heading">
-			  <h3 class="panel-title">关于我们</h3>
-		  </div>
-		  <div class="panel-body">
-		  	<div class="row">
-		  		<div class="col-md-6">
-			  		<div class="media">
-				      <div class="media-left">
-				        <a href="#" class="thumbnail">
-				        	<%= image_tag @company.pic_url || "default.jpg" %>
-				        </a>
-				      </div>
-	    			</div>
-		  		</div>
-		  		<div class="col-md-6">
-		  			<div class="media">
-		  				<div class="media-body">
-					        <h4 class="media-heading"><%= @company.name %></h4>
-					        <%= sanitize @company.content %>
-					      </div>
-		  			</div>
-		  		</div>
-		  	</div>
-		  </div>
-	  	</div>
-	</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>关于我们</h4>
+    </div>
+    <div class="panel-body">
+    	<%= sanitize @company.content  %>
+    </div>
+</div>
 </div>
