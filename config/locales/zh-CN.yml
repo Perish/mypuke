@@ -9,6 +9,24 @@ zh-CN:
               blank: 不能为空
             content:
               blank: 不能为空
+            factory:
+              blank: 不能为空
+            price:
+              blank: 不能为空
+            weight:
+              blank: 不能为空
+            origin:
+              blank: 不能为空
+            alco_level:
+              blank: 不能为空
+            standard:
+              blank: 不能为空
+            box:
+              blank: 不能为空
+            flavor:
+              blank: 不能为空
+            material:
+              blank: 不能为空
         slider:
           attributes:
             name: 
@@ -61,6 +79,15 @@ zh-CN:
       product:
         name: 产品名称
         content: 产品详情
+        factory: 酒厂
+        price: 产品价格
+        weight: 净含量
+        origin: 产地
+        alco_level: 酒精度
+        standard: 规格
+        box: 箱规
+        flavor: 香型
+        material: 原料
       slider:
         name: 图片描述
         style: 图片类型
