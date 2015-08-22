@@ -43,6 +43,10 @@
         <label for="material">原料</label>
         <%= f.text_field :material, class: "form-control", placeholder: "原料" %>
       </div>
+      <div class="form-group">
+        <label for="detail_qrcode">二维码旁边描述</label>
+        <%= f.text_field :detail_qrcode, class: "form-control", placeholder: "二维码旁边描述" %>
+      </div>
     <div class="form-group">
       <label for="pic">产品图片</label>
       <%= f.file_field :pic, class: "form-control" %>

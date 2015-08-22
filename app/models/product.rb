@@ -9,6 +9,7 @@ class Product < ActiveRecord::Base
   	# :box, :string  # 箱规
   	# :flavor, :string  # 香型
   	# :material, :string  # 原料 :price, 价格
+    # detail_qrcode 二维码旁边的描述
 
 
 
@@ -17,7 +18,7 @@ class Product < ActiveRecord::Base
   belongs_to :company
 
   validates :name, :content, :price, :factory, :weight, :origin, :alco_level, :standard,
-  			:box, :flavor, :material, presence: true
+  			:box, :detail_qrcode, :flavor, :material, presence: true
 
 
   
