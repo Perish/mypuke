@@ -39,6 +39,10 @@ zh-CN:
               blank: 不能为空
             content: 
               blank: 不能为空
+        custome:
+          attributes:
+            content: 
+              blank: 不能为空
         info:
           attributes:
             name: 
@@ -100,6 +104,8 @@ zh-CN:
         style: 资讯类型
       contact:
         content: 联系方式
+      custome:
+        content: 私人定制内容
       company: 
         name: 公司名称
         main_url: 公司网址

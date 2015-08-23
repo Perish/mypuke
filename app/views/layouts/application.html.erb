@@ -23,29 +23,37 @@
  <div class="head-wrap">
    <div class="container">
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-header">
-        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="navbar-brand logo" href="  "></a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-left">
-          <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path %></li>
-          <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "在线商城", spread_products_path %></li>
-          <li><a href="#">私人定制</a></li>
-          <li class="<%= 'active' if controller_name =="companies"%>"><%= link_to "关于我们", intro_path%></a></li>
-          <li class="<%= 'active' if controller_name =="contacts"%>"><%= link_to "联系我们", contacts_path %></a></li>
-          <!--<li><a href="#">联系我们</a></li>-->
-        </ul>
-        <ul class="nav navbar-nav navbar-right" id="ECS_MEMBERZONE">
-          <li>
-          </li>
-        </ul>
-      </div>
+        <div class="navbar-header">
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="navbar-brand logo" href="  "></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path %></li>
+                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "在线商城", spread_products_path %></li>
+                <li class="<%= 'active' if controller_name=="customes"%>"><%= link_to "私人定制", customes_path %></li>
+                <li class="<%= 'active' if controller_name =="companies"%>"><%= link_to "关于我们", intro_path%></a></li>
+                <li class="<%= 'active' if controller_name =="contacts"%>"><%= link_to "联系我们", contacts_path %></a></li>
+              <!--<li><a href="#">联系我们</a></li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right" id="ECS_MEMBERZONE">
+                <li>
+                    
+<!--<a href="http://www.yitongbaijiu.com/user.php" rel="nofollow">登录</a>|<a href="http://www.yitongbaijiu.com/user.php?act=register" rel="nofollow">注册</a>-->
+
+<!--| -->
+<!--<a id="ECS_CARTINFO" href="http://www.yitongbaijiu.com/flow.php" title="查看购物车">-->
+    <!--<span class="glyphicon glyphicon-shopping-cart"></span>-->
+    <!--查看购物车<span class="badge">0</span>-->
+<!--</a>-->
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
     </div>
