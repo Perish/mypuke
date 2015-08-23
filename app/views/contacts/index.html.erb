@@ -9,30 +9,37 @@
 		</div>
 	</div>
 </div>
-<div class="row">
-	<div class="col-xs-6">
-		<div class="panel panel-primary">
-		  <div class="panel-heading">
-			  <h3 class="panel-title">联系方式</h3>
-		  </div>
+<div>
+  <h3 style="text-align: center;">联系我们</h3>
+
+  <div class="left" style="margin-top: 5px">
+		<!--<div class="panel panel-primary">-->
+		  <!--<div class="panel-heading">-->
+			  <!--<h3 class="panel-title">联系方式</h3>-->
+		  <!--</div>-->
 		  <div class="panel-body">
 		  	<% if @contact.blank? %>
 				<p class="text-center">还没有联系方式哟~！</p>
 		  	<% else %>
 		  	<div class="row">
-		  		<div class="col-md-8 col-md-offset-1">
+		  		<div class="col-md-6 col-md-offset-1">
 		  			<%= sanitize @contact.content %>
 		  		</div>
 		  	</div>
 		  	<% end %>
 		  </div>
-	  	</div>
+	  	<!--</div>-->
 	</div>
-	<div class="col-xs-6">
-		<div class="panel panel-primary">
-		  <div class="panel-heading">
-			  <h3 class="panel-title">联系我们</h3>
-		  </div>
+  <table class="line">
+    <tr>
+      <td height='500'  bgcolor='#cccccc'></td>
+    </tr>
+  </table>
+	<div class="right">
+		<!--<div class="panel panel-primary">-->
+		  <!--<div class="panel-heading">-->
+			  <!--<h3 class="panel-title">联系我们</h3>-->
+		  <!--</div>-->
 		  <div class="panel-body">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-1">
@@ -57,11 +64,34 @@
 				    <label for="content">内容</label>
 					<%= f.text_area :content, class: "form-control", id: "content", placeholder: "内容", rows: "3" %>
 				  </div>
-				  <%= f.button "发送", class: "btn btn-primary", data: {disable_with: "#{fa_icon("spinner spin", text: "发送...")}"}  %>
+				  <%= f.button "发送", class: "", data: {disable_with: "#{fa_icon("spinner spin", text: "发送...")}"}  %>
 				<% end %>
 				</div>
 			</div>
 		  </div>
-	  	</div>
+	  	<!--</div>-->
 	</div>
 </div>
+<style type="text/css">
+  .panel-heading{text-align: center;  background-color: #ffffff; border: none;}
+  .panel-primary{border-color:#ffffff;}
+  .center-line{border-left: solid;
+      color: #000; margin: auto;}
+  .right{
+      float: right;
+      width: 50%;
+      margin-top: -500px;
+  }
+  .left{
+      float: left;
+      width: 50%;
+      /*margin-left: 200px;*/
+  }
+  /*.line{*/
+      /*/!*margin-left: 100px;*!/*/
+  /*}*/
+  /*.col-md-6 col-md-offset-1 {*/
+      /*padding-left: 45px;*/
+      /*padding-right:15px;*/
+  /*}*/
+</style>
