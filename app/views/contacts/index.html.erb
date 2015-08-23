@@ -21,10 +21,10 @@
 		  	<% if @contact.blank? %>
 				<p class="text-center">还没有联系方式哟~！</p>
 		  	<% else %>
-		  	<div class="row">
-		  		<div class="col-md-6 col-md-offset-1">
+		  	<div class="left-t">
+		  		<!--<div class="col-md-6 col-md-offset-1">-->
 		  			<%= sanitize @contact.content %>
-		  		</div>
+		  		<!--</div>-->
 		  	</div>
 		  	<% end %>
 		  </div>
@@ -86,6 +86,9 @@
       float: left;
       width: 50%;
       /*margin-left: 200px;*/
+  }
+  .left-t{
+      margin-left: 20px;
   }
   /*.line{*/
       /*/!*margin-left: 100px;*!/*/
