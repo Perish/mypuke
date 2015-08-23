@@ -8,6 +8,7 @@ class Company < ActiveRecord::Base
   has_many :awards, dependent: :destroy
   has_many :sliders, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_one :custome
 
   validates :name, :summary, :content, :main_url,  presence: true
 

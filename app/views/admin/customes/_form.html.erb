@@ -1,0 +1,19 @@
+<%= form_for(@custome, url: admin_customes_path, method: :post) do |f| %>
+    <% flash.each do |key, value|%>
+    <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+  <%= render partial: "shared/error_messages", locals: {obj: @custome} %>
+    <div class="form-group">
+    <%= f.text_area :content, placeholder: "私人定制", id: "editor" %>
+    </div>
+  <%= f.button "提交", class: "btn btn-success", data: { disable_with: "#{fa_icon("spinner spin", text: "提交...")}" } %>
+<% end %>
+
+
+  <script>
+  $(function(){
+    var editor = new UE.ui.Editor();
+    editor.render("editor");
+    // $("#editor").hide();
+  });
+  </script>

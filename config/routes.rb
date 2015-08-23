@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :customes, only: [:index]
   root 'welcome#index'
   resources :products, only: [:index, :show] do
     get "spread", on: :collection
@@ -25,5 +26,6 @@ Rails.application.routes.draw do
     resources :awards
     resources :sliders
     resources :users
+    resources :customes, only: [:new, :create, :show]
   end
 end

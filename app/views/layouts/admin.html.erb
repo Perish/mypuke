@@ -62,16 +62,19 @@
 					<li class="<%= "active" if params[:controller].match(/products/) %>">
 						<%= link_to "产品列表", admin_products_path %>
 					</li>
-					<!--<li class="<%= "active" if params[:controller].match(/infos/) %>">-->
+					<li class="<%= "active" if params[:controller].match(/customes/) %>">
+						<%= link_to "私人定制", new_admin_custome_path %>
+					</li>
+					<!--<li class="<%#= "active" if params[:controller].match(/infos/) %>">-->
 						<!--<%#= link_to "资讯动态", admin_infos_path %>-->
 					<!--</li>-->
 					<li class="<%= "active" if params[:controller].match(/contacts/) %>">
 						<%= link_to "联系我们", new_admin_contact_path %>
 					</li>
-					<!--<li class="<%= "active" if params[:controller].match(/invites/) %>">-->
+					<!--<li class="<%#= "active" if params[:controller].match(/invites/) %>">-->
 						<!--<%#= link_to "招聘信息", admin_invites_path %>-->
 					<!--</li>-->
-					<!--<li class="<%= "active" if params[:controller].match(/awards/) %>">-->
+					<!--<li class="<%#= "active" if params[:controller].match(/awards/) %>">-->
 						<!--<%#= link_to "企业殊荣", admin_awards_path %>-->
 					<!--</li>-->
                   <li class="<%= "active" if params[:controller].match(/users/) %>">
