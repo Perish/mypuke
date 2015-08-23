@@ -7,4 +7,4 @@
 #= require turbolinks
 #= require baidu_ueditor
 #= require ueditor_custom_config
-#= require jquery.uploadify.min
+#= require admin/jquery.uploadify.min
