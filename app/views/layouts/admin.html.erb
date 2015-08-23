@@ -77,9 +77,11 @@
 					<!--<li class="<%#= "active" if params[:controller].match(/awards/) %>">-->
 						<!--<%#= link_to "企业殊荣", admin_awards_path %>-->
 					<!--</li>-->
-                  <li class="<%= "active" if params[:controller].match(/users/) %>">
-                    <%= link_to "用户管理", admin_users_path %>
-                  </li>
+          <% if current_user.name == 'Puke'%>
+            <li class="<%= "active" if params[:controller].match(/users/) %>">
+              <%= link_to "用户管理", admin_users_path %>
+            </li>
+          <% end %>
 				</ul>			
 			</div>
 			<div class="col-md-10" role="main" style="position: relative;">
