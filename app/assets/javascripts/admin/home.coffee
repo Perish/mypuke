@@ -8,3 +8,8 @@
 #= require baidu_ueditor
 #= require ueditor_custom_config
 #= require admin/jquery.uploadify.min
+
+$ -> 
+  $('.close').click ->
+  	alert($(this).data('id'))
+  	$.post "/product_pic/#{id}"

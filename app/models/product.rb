@@ -16,6 +16,7 @@ class Product < ActiveRecord::Base
   default_scope { order(created_at: "desc") }
 
   belongs_to :company
+  has_many :product_pics, dependent: :destroy
 
   validates :name, :content, :price, :factory, :weight, :origin, :alco_level, :standard,
   			:box, :detail_qrcode, :flavor, :material, presence: true

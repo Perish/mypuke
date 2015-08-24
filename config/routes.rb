@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get "intro", to: "companies#show", as: "intro"
   get 'awards', to: "awards#index", as: "awards"
+  post 'product_pic', to: "ueditor_images#product_pic", as: :product_pic
+  post 'product_pic/:id', to: 'ueditor_images#destroy', as: :product_pic_destroy
 
   namespace :admin do
     get 'home', to: "home#index", as: "home"

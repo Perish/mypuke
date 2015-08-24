@@ -1,3 +1,22 @@
+<style type="text/css">
+
+.carousel {
+    margin-bottom: 10px;
+}    
+.carousel-indicators li {
+    border: 1px solid grey;
+}
+.carousel-indicators {
+    bottom: -40px;
+}
+.carousel-indicators .active {
+    background-color: grey;
+}
+.carousel-inner {
+    margin-top: 35px;
+}
+
+</style>
         <div class="container">
            <div class="panel panel-default">
                 <div class="panel-body">
@@ -5,7 +24,58 @@
                 <div class="col-xs-7 col-md-7">
 					<div class="gallery">
 					    <div class="gallery-inner">
-					    	<%= image_tag @product.pic_url, class: "img-responsive center-block", alt: @product.name %>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <% if @product.product_pics.present? %>
+            <% num = @product.product_pics.size-1 %>
+              <ol class="carousel-indicators">
+                <% 0.upto(num) do |cot| %>
+                <li data-target="#myCarousel" data-slide-to="<%= cot %>" class="<%= "active" if cot==0 %>"></li>
+                <% end %>
+              </ol>
+              <div class="carousel-inner">
+                <% @product.product_pics.each_with_index do |product_pic, index| %>
+                  <div class="item <%= "active" if index==0 %>">
+                    <%= link_to spread_products_path do %>
+                        <%= image_tag product_pic.image.url || "default.jpg", class: "img-responsive center-block", alt: "" %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+          <% else %>
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item">
+                    <a href="#">
+                        <img src="/assets/header.png" class="img-responsive center-block" alt="puke">
+                    </a>
+                </div>
+                <div class="item active">
+                    <a href="#">
+                        <img src="/assets/default.jpg" class="img-responsive center-block" alt="puke">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="/assets/default.jpg" class="img-responsive center-block" alt="puke">
+                    </a>
+                </div>
+            </div>
+          <% end %>
+              <!-- Controls -->
+              <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="icon-prev"></span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="icon-next"></span>
+              </a> -->
+    </div>
+
+
+
 					    </div>
 					</div>
                     
