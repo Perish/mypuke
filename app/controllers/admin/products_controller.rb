@@ -13,6 +13,10 @@ class Admin::ProductsController < Admin::AdminController
 	def create
 		@product = @company.products.new(product_params)
 		if @product.save
+			if params[:product_pic].present?
+				pics = ProductPic.where(id: params[:product_pic])
+				pics.update_all(product_id: @product.id)
+			end
 			flash["success"] = "创建成功"
 			redirect_to admin_product_path(@product)
 		else
