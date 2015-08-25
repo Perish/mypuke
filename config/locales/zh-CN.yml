@@ -27,6 +27,8 @@ zh-CN:
               blank: 不能为空
             material:
               blank: 不能为空
+            detail_qrcode:
+              blank: 不能为空
         slider:
           attributes:
             name: 
@@ -92,6 +94,7 @@ zh-CN:
         box: 箱规
         flavor: 香型
         material: 原料
+        detail_qrcode: 二维码旁边描述
       slider:
         name: 图片描述
         style: 图片类型

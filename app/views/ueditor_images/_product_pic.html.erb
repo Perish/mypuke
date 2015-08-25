@@ -3,6 +3,7 @@
   <button data-id="<%= product_pic.id %>" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= image_tag product_pic.image.url, data: { holder_rendered: true }, style: "height: 180px; width: 100%; display: block;" %>
   </a>
+  <%= hidden_field_tag "product_pic[]", product_pic.id %>
 </div>
 
 <script type="text/javascript">
