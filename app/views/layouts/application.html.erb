@@ -22,7 +22,7 @@
 <body>
  <div class="head-wrap">
    <div class="container">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top" style="background-color: #ffffff;border-bottom: 1px solid #eee;">
         <div class="navbar-header">
             <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
@@ -34,11 +34,11 @@
         </div>
         <div class="navbar-collapse collapse" style="margin-left: 30px;">
             <ul class="nav navbar-nav navbar-left">
-                <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path %></li>
-                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "在线商城", spread_products_path %></li>
-                <li class="<%= 'active' if controller_name=="customes"%>"><%= link_to "私人定制", customes_path %></li>
-                <li class="<%= 'active' if controller_name =="companies"%>"><%= link_to "关于我们", intro_path%></a></li>
-                <li class="<%= 'active' if controller_name =="contacts"%>"><%= link_to "联系我们", contacts_path %></a></li>
+                <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path, style: "color: #101010;" %></li>
+                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "在线商城", spread_products_path, style: "color: #101010;" %></li>
+                <li class="<%= 'active' if controller_name=="customes"%>"><%= link_to "私人定制", customes_path, style: "color: #101010;" %></li>
+                <li class="<%= 'active' if controller_name =="companies"%>"><%= link_to "关于我们", intro_path, style: "color: #101010;" %></a></li>
+                <li class="<%= 'active' if controller_name =="contacts"%>"><%= link_to "联系我们", contacts_path, style: "color: #101010;" %></a></li>
               <!--<li><a href="#">联系我们</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right" id="ECS_MEMBERZONE">
