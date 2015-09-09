@@ -31,7 +31,7 @@ body {
 .logo {
     width: 163px;
     height: 46px;
-    background: url(images/logo.png) no-repeat;
+    background: url(/assets/logo.png) no-repeat;
 }
 
 /* MARKETING CONTENT

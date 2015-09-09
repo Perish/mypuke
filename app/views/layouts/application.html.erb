@@ -22,7 +22,7 @@
 <body>
  <div class="head-wrap">
    <div class="container">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top" style="background-color: #ffffff;border-bottom: 1px solid #eee;">
         <div class="navbar-header">
             <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
@@ -34,11 +34,11 @@
         </div>
         <div class="navbar-collapse collapse" style="margin-left: 30px;">
             <ul class="nav navbar-nav navbar-left">
-                <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path %></li>
-                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "在线商城", spread_products_path %></li>
-                <li class="<%= 'active' if controller_name=="customes"%>"><%= link_to "私人定制", customes_path %></li>
-                <li class="<%= 'active' if controller_name =="companies"%>"><%= link_to "关于我们", intro_path%></a></li>
-                <li class="<%= 'active' if controller_name =="contacts"%>"><%= link_to "联系我们", contacts_path %></a></li>
+                <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path, style: "color: #101010;" %></li>
+                <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "在线商城", spread_products_path, style: "color: #101010;" %></li>
+                <li class="<%= 'active' if controller_name=="customes"%>"><%= link_to "私人定制", customes_path, style: "color: #101010;" %></li>
+                <li class="<%= 'active' if controller_name =="companies"%>"><%= link_to "关于我们", intro_path, style: "color: #101010;" %></a></li>
+                <li class="<%= 'active' if controller_name =="contacts"%>"><%= link_to "联系我们", contacts_path, style: "color: #101010;" %></a></li>
               <!--<li><a href="#">联系我们</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right" id="ECS_MEMBERZONE">
@@ -63,17 +63,14 @@
         <p class="pull-left">© 2005-2015 朴客酒 版权所有，并保留所有权利。<a href="#">京ICP备14055790号</a></p>
       </div>
     <%= javascript_include_tag 'application' %>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["tsina","weixin","qzone","renren","tqq","kaixin001","tieba","douban","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-      var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?abfe9d99331824e0fc3daf752f5f889f";
-          var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-})();
-</script>
     </div>
  
+    <script type="text/javascript">
+    $(function(){
+      $('.carousel').carousel({
+        interval: 3000
+      })
+    })
+    </script>
 </body>
 </html>
