@@ -1,0 +1,1 @@
+<%= link_to product.scroll_tag, scroll_admin_product_path(product), class: "btn btn-primary scroll_#{product.id}", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> #{product.op_scroll_tag}..." }, remote: true %>

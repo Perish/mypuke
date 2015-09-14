@@ -13,7 +13,7 @@ class Product < ActiveRecord::Base
 
 
 
-  default_scope { order(created_at: "desc") }
+  default_scope { order(num: "asc", created_at: "desc") }
 
   belongs_to :company
   has_many :product_pics, dependent: :destroy
@@ -21,6 +21,14 @@ class Product < ActiveRecord::Base
   validates :name, :content, :price, :factory, :weight, :origin, :alco_level, :standard,
   			:box, :detail_qrcode, :flavor, :material, presence: true
 
+
+  def scroll_tag
+      scroll == 1 ? "可轮播" : "不可轮播"
+  end
+
+  def op_scroll_tag
+      scroll == 0 ? "可轮播" : "不可轮播"
+  end
 
   
 end

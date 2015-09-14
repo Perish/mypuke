@@ -27,6 +27,15 @@ class Admin::ProductsController < Admin::AdminController
 	def edit
 	end
 
+	def scroll
+		scroll = @product.scroll == 0 ? 1 : 0
+		@product.update_attributes(scroll: scroll)
+	end
+
+	def top
+		@product.update_attributes(num: @company.product_mini_num(@product))
+	end
+
 	def update
 		if @product.update_attributes(product_params)
 			flash["success"] = "更新成功"

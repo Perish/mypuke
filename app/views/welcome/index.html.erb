@@ -60,7 +60,7 @@
 	          <div class="carousel-inner">
 	            <% @company.spreads.each_with_index do |product, index| %>
 	              <div class="item <%= "active" if index==0 %>">
-	                <%= link_to spread_products_path do %>
+	                <%= link_to product do %>
 	                    <%= image_tag product.pic_url || "default.jpg", class: "img-responsive center-block", alt: "" %>
 	                <% end %>
 	              </div>

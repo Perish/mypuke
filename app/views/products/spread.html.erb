@@ -3,10 +3,13 @@
 	    <div class="panel-body">
 	        <p></p>
 	        <p style="text-align: center;position:relative;">
-	        	<% @company.spreads.each do |product| %>
+	        	<% @company.spreads.each_with_index do |product, cot| %>
 	        		<%= link_to product do %>
 						<%= image_tag product.pic_url, alt: product.name, width: "100%" %>
 					<% end %>
+					<% if cot != @company.spreads.size-1 %>
+	        		<hr>
+	        		<% end %>
 	        	<% end %>
 	        </p>
 	        <p></p>

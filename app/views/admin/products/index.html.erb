@@ -17,18 +17,7 @@
 		</div>
 			<table class="table">
 		      <tbody>
-		<% @products.each do |product| %>
-		        <tr class="row <%= dom_id(product) %>">
-		          <th class="col-xs-6 col-sm-3"><%= image_tag product.pic_url ||  "default.jpg", size: "60x55" %></th>
-		          <td class="col-xs-6 col-sm-3 text-center"><%= product.name %></td>
-		          <td class="col-xs-6 col-sm-3 text-center"><%= truncate(strip_tags(product.content), length: 40, omission: '...' ) %></td>
-		          <td class="col-xs-6 col-sm-3 text-center">
-		          	<%= link_to "编辑", edit_admin_product_path(product), class: "btn btn-primary" %>
-		          	<%= link_to "查看", admin_product_path(product), class: "btn btn-primary" %>
-		          	<%= link_to "删除", admin_product_path(product), class: "btn btn-danger", data: { confirm: "确定删除吗？", disable_with: "<i class='fa fa-spinner fa-spin'></i> 删除..." }, method: :delete, remote: true %>
-		          </td>
-		        </tr>
-		<% end %>
+				<%= render @products %>
 		      </tbody>
 		    </table>
 		    <%= paginate @products %>

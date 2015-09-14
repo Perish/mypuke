@@ -25,6 +25,12 @@ class Company < ActiveRecord::Base
   end
 
   def spreads
-    products.limit(4)
+    products.where(scroll: 0)
+  end
+
+  def product_mini_num(product)
+    mn = products.map(&:num).min
+    return product.id if mn == product.num
+    return mn - 1
   end
 end
