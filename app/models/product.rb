@@ -2,9 +2,9 @@ class Product < ActiveRecord::Base
   mount_uploader :pic, ImageUploader
 
   	# :factory, :string  # 酒厂
-  	# :weight, :integer  # 净含量
+  	# :weight, :integer  # 净含量 # String
   	# :origin, :string  # 产地
-  	# :alco_level, :integer  # 酒精度
+  	# :alco_level, :integer  # 酒精度 # String 
   	# :standard, :string  # 规格
   	# :box, :string  # 箱规
   	# :flavor, :string  # 香型
@@ -18,8 +18,8 @@ class Product < ActiveRecord::Base
   belongs_to :company
   has_many :product_pics, dependent: :destroy
 
-  validates :name, :content, :price, :factory, :weight, :origin, :alco_level, :standard,
-  			:box, :detail_qrcode, :flavor, :material, presence: true
+  validates :name, :content, :price, :weight, :origin, :alco_level,
+  			:detail_qrcode, :flavor, :material, presence: true
 
 
   def scroll_tag

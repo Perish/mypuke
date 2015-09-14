@@ -83,21 +83,21 @@
                 <div class="col-xs-5 col-md-5 goods-info">
                     <ul class="list-unstyled">
                         <li><h2><%= @product.name %></h2></li>
-                        <li>酒厂: <%= @product.factory %></li>
-                        <li>产地: <%= @product.origin %></li>
-                        <li>净含量: <%= @product.weight %> &nbsp;&nbsp;&nbsp; 酒精度: <%= @product.alco_level %> &nbsp;&nbsp;&nbsp; 箱规: <%= @product.box %></li>
-                        <li>规格: <%= @product.standard %> &nbsp;&nbsp;&nbsp; 香型: <%= @product.flavor %></li>
+                        <li>香型: <%= @product.flavor %></li>
+                        <li>净含量: <%= @product.weight %> </li> 
+                        <li>酒精度: <%= @product.alco_level %> </li>
                         <li>原料: <%= @product.material %></li>
+                        <li>产地: <%= @product.origin %></li>
                         <li><button type="button" class="btn btn-danger">价格: <small><%= @product.price %>￥</small></button></li>
                     </ul>
                     <div class="media">
+                      <div class="media-left">
+                        <a href="#">
+                          <%= image_tag 'puke_qrcode.png', size: '100x100' %>
+                        </a>
+                      </div>
                       <div class="media-body text-warning">
                         <%= @product.detail_qrcode %>
-                      </div>
-                      <div class="media-right">
-                        <a href="#">
-                            <%= image_tag 'puke_qrcode.png', size: '100x100' %>
-                        </a>
                       </div>
                     </div>
                 </div>
