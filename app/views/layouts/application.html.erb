@@ -23,7 +23,7 @@
  <div class="head-wrap">
    <div class="container">
     <div class="navbar navbar-fixed-top" style="background-color: #ffffff;border-bottom: 1px solid #eee;">
-        <div class="navbar-header">
+        <div class="navbar-header" style="margin-left: 100px">
             <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -32,13 +32,14 @@
             </a>
             <a class="navbar-brand logo" href="/" style="margin-top: -29px"><%=image_tag("logo.png")%></a>
         </div>
-        <div class="navbar-collapse collapse" style="margin-left: 30px;">
-            <ul class="nav navbar-nav navbar-left">
+        <div class="navbar-collapse collapse" style="margin-left: 50px;">
+            <ul class="nav navbar-nav navbar-left" style="margin-left: 5%">
                 <li class="<%= 'active' if controller_name=="welcome"%>"><%= link_to "首页", root_path %></li>
                 <li class="<%= 'active' if controller_name=="products"%>"><%= link_to "在线商城", spread_products_path %></li>
                 <li class="<%= 'active' if controller_name=="customes"%>"><%= link_to "私人定制", customes_path %></li>
                 <li class="<%= 'active' if controller_name =="companies"%>"><%= link_to "关于我们", intro_path %></a></li>
                 <li class="<%= 'active' if controller_name =="contacts"%>"><%= link_to "联系我们", contacts_path %></a></li>
+              <!--<li style="color: #101010;margin-top: 2%;margin-left: 105%;width: 250px">在线咨询：010-57491998</li>-->
               <!--<li><a href="#">联系我们</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right" id="ECS_MEMBERZONE">
