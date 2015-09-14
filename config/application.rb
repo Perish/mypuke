@@ -27,6 +27,6 @@ module CompanyWeb
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.action_view.sanitized_allowed_tags = ['strong', 'small', 'em', 'a', "iframe", "embed", "img", "content", "h1", "h2", "h3", "h4", "h5", "h6", "section", "span", "fieldset", "legend", "pre", "u", "b", "i", "tt", "cite", "font", "code", "address", "br", "dl", "dt", "dd", "ul", "li", "ol", "div", "hr", "center", "table", "tbody", "tr", "td", "thead"]
+    config.action_view.sanitized_allowed_tags = ['strong', 'small', 'em', 'a', "iframe", "embed", "img", "content", "h1", "h2", "h3", "h4", "h5", "h6", "section", "span", "fieldset", "legend", "pre", "u", "b", "i", "tt", "cite", "font", "code", "address", "br", "dl", "dt", "dd", "ul", "li", "ol", "div", "hr", "center", "table", "tbody", "tr", "td", "thead", "p"]
   end
 end
