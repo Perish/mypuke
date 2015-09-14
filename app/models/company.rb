@@ -1,6 +1,6 @@
 class Company < ActiveRecord::Base
   mount_uploader :pic, ImageUploader
-  belongs_to :user 
+  belongs_to :user
   has_many :products, dependent: :destroy
   has_many :infos, dependent: :destroy
   has_one :contact, dependent: :destroy
