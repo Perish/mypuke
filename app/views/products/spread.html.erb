@@ -5,7 +5,7 @@
 	        <p style="text-align: center;position:relative;">
 	        	<% @company.spreads.each_with_index do |product, cot| %>
 	        		<%= link_to product do %>
-						<%= image_tag product.pic_url, alt: product.name, width: "100%" %>
+						<%= image_tag product.pic_url, width: "100%" %>
 					<% end %>
 					<% if cot != @company.spreads.size-1 %>
 	        		<hr>
