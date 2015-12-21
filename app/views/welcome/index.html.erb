@@ -58,10 +58,11 @@
 	            <% end %>
 	          </ol>
 	          <div class="carousel-inner">
-	            <% @company.spreads.each_with_index do |product, index| %>
+	          <% logger.info @company.spreads.inspect %>
+	            <% @company.spreads.each_with_index do |ss, index| %>
 	              <div class="item <%= "active" if index==0 %>">
-	                <%= link_to product do %>
-	                    <%= image_tag product.pic_url || "default.jpg", class: "img-responsive center-block", alt: "" %>
+	                <%= link_to ss do %>
+	                    <%= image_tag ss.pic_url || "default.jpg", class: "img-responsive center-block", alt: "" %>
 	                <% end %>
 	              </div>
 	            <% end %>

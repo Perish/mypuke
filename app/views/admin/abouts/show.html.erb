@@ -1,0 +1,24 @@
+<div class="panel">
+	<div class="panel-body">
+		<div class="subheader">朴客故事</div>
+		<%= form_for([:admin, @about]) do |f| %>
+			<% flash.each do |key, value|%>
+			<div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+			<% end %>
+  			<%= render partial: "shared/error_messages", locals: {obj: @about} %>
+		    <div class="form-group">
+		      <label for="profile">故事详情</label>
+		      <!-- <div id="editor"></div> -->
+		    <%= f.text_area :desc, placeholder: "产品详情", id: "editor" %>
+		    </div>
+			<%= f.button "提交", class: "btn btn-success", data: { disable_with: "#{fa_icon("spinner spin", text: "更新...")}" } %>
+		<% end %>
+
+  <script type="text/javascript">
+  $(function(){
+    var editor = new UE.ui.Editor();
+    editor.render("editor");
+  });
+  </script>
+	</div>
+</div>

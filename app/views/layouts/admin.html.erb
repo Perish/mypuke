@@ -71,6 +71,12 @@
 					<li class="<%= "active" if params[:controller].match(/contacts/) %>">
 						<%= link_to "联系我们", new_admin_contact_path %>
 					</li>
+					<li class="<%= "active" if params[:controller].match(/abouts/) %>">
+						<%= link_to "朴客故事", admin_about_path %>
+					</li>
+					<li class="<%= "active" if params[:controller].match(/activities/) %>">
+						<%= link_to "活动列表", admin_activities_path %>
+					</li>
 					<!--<li class="<%#= "active" if params[:controller].match(/invites/) %>">-->
 						<!--<%#= link_to "招聘信息", admin_invites_path %>-->
 					<!--</li>-->

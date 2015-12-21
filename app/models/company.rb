@@ -9,11 +9,17 @@ class Company < ActiveRecord::Base
   has_many :sliders, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_one :custome
+  has_one :about
+  has_many :activities
 
   validates :name, :summary, :content, :main_url,  presence: true
 
   def sandom_products
   	products.sample(3)
+  end
+
+  def activity_huodong
+    activities.where(status: 1)
   end
 
   def com_top
@@ -25,7 +31,12 @@ class Company < ActiveRecord::Base
   end
 
   def spreads
-    products.where(scroll: 0)
+    arr = []
+    acts = activity_huodong.to_a
+    arr += acts if !acts.blank?
+    prs = products.where(scroll: 0).to_a
+    arr += prs if !prs.blank?
+    arr
   end
 
   def product_mini_num(product)

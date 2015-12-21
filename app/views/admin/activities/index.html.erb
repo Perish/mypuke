@@ -1,0 +1,26 @@
+<div class="panel">
+  <div class="panel-body">
+  	<div class="subheader">
+  		活动列表 
+  		<%= link_to new_admin_activity_path, class: "pull-right" do %>
+			<%= fa_icon("plus") %> 添加活动
+  		<% end %>
+  	</div>
+    <% if @activities.blank? %>
+		<div class="alert alert-success" role="alert">还没有活动，快去<%= link_to "创建", new_admin_activity_path, class: "btn btn-primary" %>吧！</div>
+    <% else %>
+		<div class="row">
+			<div class="col-xs-6 col-sm-3 text-center">是否发布</div>
+			<div class="col-xs-6 col-sm-3 text-center">活动详情</div>
+			<div class="col-xs-6 col-sm-3 text-center">活动详情</div>
+			<div class="col-xs-6 col-sm-3 text-center">操作</div>
+		</div>
+			<table class="table">
+		      <tbody>
+				<%= render @activities %>
+		      </tbody>
+		    </table>
+		    <%= paginate @activities %>
+    <% end %>
+  </div>
+</div>

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  resources :activities, only: [:show]
+
+  get 'abouts/index'
+
   resources :customes, only: [:index]
   root 'welcome#index'
   resources :products, only: [:index, :show] do
@@ -34,5 +39,8 @@ Rails.application.routes.draw do
     resources :sliders
     resources :users
     resources :customes, only: [:new, :create, :show]
+    resource :about
+    resources :activities
+    
   end
 end

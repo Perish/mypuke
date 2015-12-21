@@ -16,10 +16,10 @@ class Product < ActiveRecord::Base
   default_scope { order(num: "asc", created_at: "desc") }
 
   belongs_to :company
-  has_many :product_pics, dependent: :destroy
+  # has_many :product_pics, dependent: :destroy
 
-  validates :name, :content, :price, :weight, :origin, :alco_level,
-  			:detail_qrcode, :flavor, :material, presence: true
+  # validates :name, :content, :price, :weight, :origin, :alco_level,
+  			# :detail_qrcode, :flavor, :material, presence: true
 
 
   def scroll_tag

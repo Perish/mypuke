@@ -41,6 +41,10 @@ zh-CN:
               blank: 不能为空
             content: 
               blank: 不能为空
+        about:
+          attributes:
+            desc:
+              blank: 不能为空
         custome:
           attributes:
             content: 
@@ -57,6 +61,12 @@ zh-CN:
         contact:
           attributes:
             content: 
+              blank: 不能为空
+        activity:
+          attributes:
+            desc: 
+              blank: 不能为空
+            pic: 
               blank: 不能为空
         company:
           attributes:
@@ -98,6 +108,8 @@ zh-CN:
       slider:
         name: 图片描述
         style: 图片类型
+      about: 
+        desc: 故事详情
       invite:
         name: 标题
         content: 内容
@@ -119,3 +131,6 @@ zh-CN:
         email: 邮箱
         tel: 电话
         content: 内容
+      activity:
+        pic: 轮播图片
+        desc: 活动详情
