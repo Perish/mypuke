@@ -1,7 +1,7 @@
 <div class="panel">
 	<div class="panel-body">
 		<div class="subheader">朴客故事</div>
-		<%= form_for([:admin, @about]) do |f| %>
+		<%= form_for([:admin, @about], url: admin_about_path) do |f| %>
 			<% flash.each do |key, value|%>
 			<div class="alert alert-<%= key %>" role="alert"><%= value %></div>
 			<% end %>
