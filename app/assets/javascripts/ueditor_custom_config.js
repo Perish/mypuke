@@ -4,7 +4,7 @@
       // Insert your config code
         imageUrl: "/ueditor_images"
         ,imagePath: ""
-        ,maxImageSideLength: 600
+        ,maxImageSideLength: 2000
         ,elementPathEnabled: false
         ,wordCount:0          //是否开启字数统计
         ,maximumWords:5000       //允许的最大字符数
