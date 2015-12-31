@@ -1,26 +1,117 @@
-<style type="text/css">
-
-.carousel {
-    margin-bottom: 10px;
-}    
-.carousel-indicators li {
-    border: 1px solid grey;
-}
-.carousel-indicators {
-    bottom: -40px;
-}
-.carousel-indicators .active {
-    background-color: grey;
-}
-.carousel-inner {
-    margin-top: 35px;
-}
-
-</style>
-<div class="container">
-    <div class="panel panel-default">
-        <div class="panel-body">
-        	<%= sanitize @product.content %>
-        </div>
-    </div>
-</div>
+ <style type="text/css">
+ 
+ .carousel {
+     margin-bottom: 10px;
+ }    
+ .carousel-indicators li {
+     border: 1px solid grey;
+ }
+ .carousel-indicators {
+     bottom: -40px;
+ }
+ .carousel-indicators .active {
+     background-color: grey;
+ }
+ .carousel-inner {
+     margin-top: 35px;
+ }
+ 
+ </style>
+         <div class="container">
+            <div class="panel panel-default">
+                 <div class="panel-body">
+             <div class="row"> 
+                 <div class="col-xs-7 col-md-7">
+                    <div class="gallery">
+                        <div class="gallery-inner">
+     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+           <% if @product.product_pics.present? %>
+             <% num = @product.product_pics.size-1 %>
+               <ol class="carousel-indicators">
+                 <% 0.upto(num) do |cot| %>
+                 <li data-target="#myCarousel" data-slide-to="<%= cot %>" class="<%= "active" if cot==0 %>"></li>
+                 <% end %>
+               </ol>
+               <div class="carousel-inner">
+                 <% @product.product_pics.each_with_index do |product_pic, index| %>
+                   <div class="item <%= "active" if index==0 %>">
+                     <%= link_to spread_products_path do %>
+                         <%= image_tag product_pic.image.url || "default.jpg", class: "img-responsive center-block", alt: "" %>
+                     <% end %>
+                   </div>
+                 <% end %>
+               </div>
+           <% else %>
+             <ol class="carousel-indicators">
+                 <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                 <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                 <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+             </ol>
+             <div class="carousel-inner">
+                 <div class="item">
+                     <a href="#">
+                         <img src="/assets/header.png" class="img-responsive center-block" alt="puke">
+                     </a>
+                 </div>
+                 <div class="item active">
+                     <a href="#">
+                         <img src="/assets/default.jpg" class="img-responsive center-block" alt="puke">
+                     </a>
+                 </div>
+                 <div class="item">
+                     <a href="#">
+                         <img src="/assets/default.jpg" class="img-responsive center-block" alt="puke">
+                     </a>
+                 </div>
+             </div>
+           <% end %>
+               <!-- Controls -->
+               <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+             <span class="icon-prev"></span>
+               </a>
+               <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+             <span class="icon-next"></span>
+               </a> -->
+     </div>
+ 
+ 
+ 
+                        </div>
+                    </div>
+                     
+                 </div>
+                 <div class="col-xs-5 col-md-5 goods-info">
+                     <ul class="list-unstyled">
+                         <li><h2><%= @product.name %></h2></li>
+                         <li>香型: <%= @product.flavor %></li>
+                         <li>净含量: <%= @product.weight %> </li> 
+                         <li>酒精度: <%= @product.alco_level %> </li>
+                         <li>原料: <%= @product.material %></li>
+                         <li>产地: <%= @product.origin %></li>
+                         <li>品牌商: <%= @product.factory %></li>
+                         <li><button type="button" class="btn btn-danger">价格: <small><%= @product.price %>￥</small></button></li>
+                     </ul>
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+ +                          <%= image_tag 'puke_qrcode.png', size: '200x200' %>
+                          </a>
+                        </div>
+                        <div class="media-body text-warning">
+                         <%= @product.detail_qrcode %>
+                       </div>
+                     </div>
+                 </div>
+             </div>
+                 </div>
+             </div>
+ 
+             <div class="panel panel-default">
+                 <div class="panel-heading">
+                     <h4>商品描述</h4>
+                 </div>
+                 <div class="panel-body">
+                    <%= sanitize @product.content %>
+                 </div>
+             </div>
+         </div>
